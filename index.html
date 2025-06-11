@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link href="src\output.css" rel="stylesheet" />
+
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body
+    class="bg-[#111111] h-screen w-screen text-white"
+    style="font-family: 'Instrument Sans', sans-serif"
+  >
+    <div class="relative h-full w-full">
+      <!-- BACKGROUND -->
+      <section class="fixed w-full h-full opacity-50">
+        <div
+          class="w-12 h-12 xl:w-[10vw] xl:h-[10vw] bg-[#FB00FF] rounded-full"
+        ></div>
+        <div
+          class="w-12 h-12 xl:w-[15vw] xl:h-[15vw] bg-[#00FFBB] rounded-full"
+        ></div>
+        <div
+          class="w-12 h-12 xl:w-[7vw] xl:h-[7vw] bg-[#FFD000] rounded-full"
+        ></div>
+        <div
+          class="w-12 h-12 xl:w-[13vw] xl:h-[13vw] bg-[#00FFF6] rounded-full"
+        ></div>
+      </section>
+
+      <!-- CONTENT -->
+      <section
+        class="w-full h-full bg-repeat backdrop-blur-[10px]"
+        style="background-image: url('assets/noice.svg')"
+      >
+        <nav></nav>
+
+        <!--  -->
+        <main>
+          <section
+            class="px-7 text-3xl lg:text-[2.5vw] flex flex-col items-center gap-1.5"
+          >
+            <div>
+              <article class="w-max">
+                <div class="tracking-wide">
+                  <h3>
+                    <span>Hello</span>
+                    <span id="comma">,</span>
+                    I am
+                  </h3>
+                </div>
+
+                <!-- imp -->
+                <div
+                  class="relative w-max text-5xl lg:text-[6vw] font-semibold tracking-wider -mt-3.5 h-[6vw] flex flex-row gap-2.5 2xl:gap-[1vw]"
+                  id="name-container"
+                >
+                  <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
+                  <div
+                    class="w-full h-full bg-transparent absolute z-50 top-3"
+                    id="name-wrapper"
+                  ></div>
+
+                  <section>
+                    <h1 class="text-[#595959] move-txt-grp1">Him</h1>
+                    <h1
+                      class="text-[#A6A6A6] move-txt-grp1 translate-y-[-100%]"
+                    >
+                      Him
+                    </h1>
+                    <h1
+                      class="text-[#F0F0F0] move-txt-grp1 translate-y-[-190%]"
+                    >
+                      Him
+                    </h1>
+                  </section>
+
+                  <!-- image -->
+                  <section
+                    id="himansh-image-box"
+                    class="w-25 h-25 lg:w-[6vw] lg:h-[6vw] relative"
+                  >
+                    <img
+                      src="assets/i_am.png"
+                      alt="pic of admin"
+                      class="rounded-[5px] w-full h-full absolute top-0 left-0 -z-1 blur-lg"
+                    />
+                    <img
+                      src="assets/i_am.png"
+                      alt="pic of admin"
+                      class="rounded-[0.4vw] w-full h-full"
+                    />
+                  </section>
+
+                  <section id="img-right-side-box">
+                    <h1 class="text-[#595959] move-txt-grp2">ansh</h1>
+                    <h1
+                      class="text-[#A6A6A6] move-txt-grp2 translate-y-[-100%]"
+                    >
+                      ansh
+                    </h1>
+                    <h1
+                      class="text-[#F0F0F0] move-txt-grp2 translate-y-[-190%]"
+                    >
+                      ansh
+                    </h1>
+                  </section>
+                </div>
+              </article>
+
+              <!--  -->
+              <article class="w-max flex flex-row gap-1.5 ml-[15vw]">
+                <div class="tracking-wide">
+                  <span>And i am a</span>
+                </div>
+
+                <!-- imp -->
+                <div class="text-center tracking-wider flex flex-col">
+                  <div
+                    class="text-5xl lg:text-[4vw] font-bold flex flex-row gap-2.5 relative"
+                  >
+                    <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
+                    <div
+                      class="w-full h-full bg-transparent absolute z-50 top-3"
+                      id="desktop-showcase-wrapper"
+                    ></div>
+
+                    <h1>Web</h1>
+
+                    <!-- image -->
+                    <section
+                      id="himansh-desktop-box"
+                      class="w-35 h-25 lg:w-[10vw] lg:h-[6vw] relative translate-y-[-40%]"
+                    >
+                      <img
+                        src="assets/my_desktop.jpg"
+                        alt="Himansh's desktop"
+                        class="rounded-[5px] w-full h-full absolute top-0 left-0 -z-1 blur-lg saturate-200 brightness-200"
+                      />
+                      <img
+                        src="assets/my_desktop.jpg"
+                        alt="Himansh's desktop"
+                        class="rounded-[0.4vw] w-full h-full"
+                      />
+                    </section>
+
+                    <section id="desktop-right-slider">
+                      <h1>Developer</h1>
+                    </section>
+                  </div>
+
+                  <h1 class="translate-x-[-10%] translate-y-[-60%]">
+                    { Frontend }
+                  </h1>
+                </div>
+              </article>
+            </div>
+          </section>
+        </main>
+
+        <!--  -->
+        <footer></footer>
+      </section>
+    </div>
+  </body>
+</html>
