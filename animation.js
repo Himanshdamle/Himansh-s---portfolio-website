@@ -1,4 +1,8 @@
 export function popImage(idObject = {}, setting = {}) {
+  console.log(document.body.offsetWidth <= 1025, document.body.offsetWidth);
+
+  if (document.body.offsetWidth <= 1025) return;
+
   const nameWrapper = document.querySelector(`#${idObject.hoveringLayer}`);
   const imgBox = document.querySelector(`#${idObject.imgBox}`);
   const rightSlider = document.querySelector(`#${idObject.slider}`);
@@ -22,6 +26,7 @@ export function popImage(idObject = {}, setting = {}) {
       scale: 1,
       filter: "blur(0px)",
       opacity: 1,
+      ease: "back.out(1.7)",
       duration: 0.4,
     });
 
@@ -127,15 +132,12 @@ function changeStars() {
       stars[count].classList.add("hidden");
       stars[count + 1].classList.remove("hidden");
 
-      console.log(count, count + 1);
       if (count === starLen - 2) {
         stars[0].classList.remove("hidden");
         stars[count + 1].classList.add("hidden");
 
         count = 0;
       } else count++;
-
-      // count === starLen - 2 ? (count = 0) : count++;
     }, 300);
   });
 
@@ -147,14 +149,78 @@ changeStars();
 
 function animateMarquee() {
   const marquees = document.querySelectorAll(".animate-marquee");
+  const marqueeWrapper = document.querySelector("#marquee-wrapper");
+
+  const animations = [];
 
   marquees.forEach((marquee) => {
-    gsap.to(marquee, {
+    const animation = gsap.to(marquee, {
       x: "-106%",
       duration: 10,
       ease: "none",
       repeat: -1,
     });
+
+    animations.push(animation);
+  });
+
+  marqueeWrapper.addEventListener("mouseenter", () => {
+    animations.forEach((animation) => animation.timeScale(-0.5));
+  });
+
+  marqueeWrapper.addEventListener("mouseleave", () => {
+    animations.forEach((animation) => animation.timeScale(1));
   });
 }
 animateMarquee();
+
+function changeMarqueeBG() {
+  const marquees = document.querySelectorAll(".animate-marquee");
+  const marqueeWrapper = document.querySelector("#marquee-wrapper");
+
+  const marqueesContent = document.querySelectorAll(".marquee-content");
+
+  function removeOpacity() {
+    marqueesContent.forEach((marqueeContent) => {
+      gsap.to(marqueeContent, {
+        opacity: 1,
+        duration: 0.3,
+      });
+    });
+  }
+
+  marquees.forEach((marquee) => {
+    marquee.addEventListener(
+      "mousemove",
+      (e) => {
+        const target = e.target;
+        const targetedMarquee = target.closest(".marquee-content");
+
+        removeOpacity();
+
+        if (!targetedMarquee) return;
+
+        if (!targetedMarquee.classList.contains("marquee-content")) return;
+
+        gsap.to(marqueeWrapper, {
+          backgroundColor: `${targetedMarquee.getAttribute("data-bg-color")}3d`,
+          duration: 0.3,
+        });
+
+        marqueesContent.forEach((marqueeContent) => {
+          if (marqueeContent !== targetedMarquee)
+            gsap.to(marqueeContent, {
+              opacity: 0.3,
+              duration: 0.3,
+            });
+        });
+      },
+      true
+    );
+  });
+
+  marqueeWrapper.addEventListener("mouseleave", () => {
+    removeOpacity();
+  });
+}
+changeMarqueeBG();

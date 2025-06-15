@@ -28,22 +28,6 @@
     style="font-family: 'Instrument Sans', sans-serif"
   >
     <div class="relative h-full w-full">
-      <!-- BACKGROUND -->
-      <section class="fixed w-full h-full opacity-50">
-        <div
-          class="w-12 h-12 xl:w-[10vw] xl:h-[10vw] bg-[#FB00FF] rounded-full"
-        ></div>
-        <div
-          class="w-12 h-12 xl:w-[15vw] xl:h-[15vw] bg-[#00FFBB] rounded-full"
-        ></div>
-        <div
-          class="w-12 h-12 xl:w-[7vw] xl:h-[7vw] bg-[#FFD000] rounded-full"
-        ></div>
-        <div
-          class="w-12 h-12 xl:w-[13vw] xl:h-[13vw] bg-[#00FFF6] rounded-full"
-        ></div>
-      </section>
-
       <!-- CONTENT -->
       <section
         class="w-full h-full bg-repeat backdrop-blur-[10px]"
@@ -54,21 +38,27 @@
         <!--  -->
         <main>
           <section
-            class="w-full h-screen px-7 text-3xl lg:text-[2.5vw] flex flex-col items-center justify-center gap-[4vh]"
+            class="w-full h-screen sm:px-7 text-3xl lg:text-[2.5vw] flex flex-col items-center justify-center gap-[4vh]"
           >
-            <div>
+            <div class="flex flex-col gap-2 sm:gap-[3vw] md:gap-[0.5vw]">
               <article class="w-max">
                 <div class="tracking-wide">
-                  <h3>
-                    <span>Hello</span>
-                    <span id="comma">,</span>
+                  <h3 class="flex flex-row">
+                    <div id="word" class="flex flex-row">
+                      <span>H</span>
+                      <span>e</span>
+                      <span>l</span>
+                      <span>l</span>
+                      <span>o</span>
+                    </div>
+                    <div id="comma" class="block">,</div>
                     I am
                   </h3>
                 </div>
 
                 <!-- imp -->
                 <div
-                  class="relative w-max text-5xl lg:text-[6vw] font-semibold tracking-wider -mt-3.5 h-[6vw] flex flex-row gap-2.5 2xl:gap-[1vw]"
+                  class="relative w-max text-5xl lg:text-[6vw] font-semibold tracking-wider -mt-3.5 h-12 md:h-[6vw] flex flex-row gap-0 lg:gap-2.5 2xl:gap-[1vw]"
                   id="name-container"
                 >
                   <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
@@ -94,7 +84,7 @@
                   <!-- image -->
                   <section
                     id="himansh-image-box"
-                    class="w-25 h-25 lg:w-[6vw] lg:h-[6vw] relative"
+                    class="w-25 h-25 lg:w-[6vw] lg:h-[6vw] relative hidden lg:block"
                   >
                     <img
                       src="assets/i_am.png"
@@ -108,6 +98,7 @@
                     />
                   </section>
 
+                  <!--  -->
                   <section id="img-right-side-box">
                     <h1 class="text-[#595959] move-txt-grp2">ansh</h1>
                     <h1
@@ -125,7 +116,7 @@
               </article>
 
               <!--  -->
-              <article class="w-max flex flex-row gap-1.5 ml-[15vw]">
+              <article class="w-max flex sm:flex-row gap-1.5 md:ml-[15vw]">
                 <div class="tracking-wide">
                   <span>And i am a</span>
                 </div>
@@ -133,7 +124,7 @@
                 <!-- imp -->
                 <div class="text-center tracking-wider flex flex-col">
                   <div
-                    class="text-5xl lg:text-[4vw] font-bold flex flex-row gap-2.5 relative"
+                    class="text-3xl sm:text-5xl lg:text-[4vw] font-bold flex flex-row gap-2.5 relative"
                   >
                     <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
                     <div
@@ -146,7 +137,7 @@
                     <!-- image -->
                     <section
                       id="himansh-desktop-box"
-                      class="w-35 h-25 lg:w-[10vw] lg:h-[6vw] relative translate-y-[-40%]"
+                      class="w-35 h-25 lg:w-[10vw] lg:h-[6vw] relative translate-y-[-40%] hidden lg:block"
                     >
                       <img
                         src="assets/my_desktop.jpg"
@@ -165,7 +156,7 @@
                     </section>
                   </div>
 
-                  <h1 class="translate-x-[-10%] translate-y-[-60%]">
+                  <h1 class="lg:translate-x-[-10%] lg:translate-y-[-60%]">
                     { Frontend }
                   </h1>
                 </div>
@@ -174,7 +165,7 @@
 
             <!-- CORE SKILLS SECTION -->
             <div
-              class="flex flex-col justify-center items-center gap-[3vh] w-[80%]"
+              class="flex flex-col justify-center items-center gap-[3vh] lg:w-[80%] w-full"
             >
               <section class="flex flex-row gap-1.5" id="core-skills-section">
                 <article class="h-[2.5vw]">
@@ -230,7 +221,8 @@
               </section>
 
               <section
-                class="bg-[#24bef13d] backdrop-blur-2xl w-full overflow-hidden rounded-[0.5vw] py-[3vh] font-bold relative"
+                id="marquee-wrapper"
+                class="bg-[#24bef13d] backdrop-blur-2xl w-full overflow-hidden rounded-[0.5vw] font-bold relative"
               >
                 <!-- Left fade -->
                 <div
@@ -238,11 +230,16 @@
                 ></div>
 
                 <!-- MARQUEE CONTENT -->
-                <div class="flex flex-row items-center gap-[5vw] w-max">
+                <div
+                  class="flex flex-row items-center gap-[5vw] w-max py-[3vh]"
+                >
                   <article
-                    class="flex flex-row gap-[5vw] w-max animate-marquee"
+                    class="flex flex-row gap-[5vw] w-max h-full animate-marquee"
                   >
-                    <div class="relative flex flex-row gap-[1vw] items-center">
+                    <div
+                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
+                      data-bg-color="#BF4322"
+                    >
                       <img
                         class="w-[4vw] h-[4vw] rounded-[0.5vw] blur-md absolute -z-1"
                         src="assets/HTML-logo.webp"
@@ -254,9 +251,15 @@
                         alt="HTML-logo"
                       />
                       <p>HTML</p>
+                      <sup class="translate-x-[-100%] font-extralight scale-50"
+                        >1</sup
+                      >
                     </div>
                     <!--  -->
-                    <div class="relative flex flex-row gap-[1vw] items-center">
+                    <div
+                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
+                      data-bg-color="#15C2B8"
+                    >
                       <img
                         class="w-[4vw] h-[4vw] rounded-[0.5vw] blur-md absolute -z-1"
                         src="assets/tailwind-css-image.png"
@@ -267,10 +270,17 @@
                         src="assets/tailwind-css-image.png"
                         alt="tw-logo"
                       />
+
                       <p>Tailwind CSS</p>
+                      <sup class="translate-x-[-100%] font-extralight scale-50"
+                        >2</sup
+                      >
                     </div>
                     <!--  -->
-                    <div class="relative flex flex-row gap-[1vw] items-center">
+                    <div
+                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
+                      data-bg-color="#F0DB4F"
+                    >
                       <img
                         class="w-[4vw] h-[4vw] rounded-[0.5vw] blur-md absolute -z-1"
                         src="assets/JavaScript-logo.png"
@@ -282,9 +292,15 @@
                         alt="JavaScript-logo"
                       />
                       <p>JavaScript</p>
+                      <sup class="translate-x-[-100%] font-extralight scale-50"
+                        >3</sup
+                      >
                     </div>
                     <!--  -->
-                    <div class="relative flex flex-row gap-[1vw] items-center">
+                    <div
+                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
+                      data-bg-color="#0BE348"
+                    >
                       <img
                         class="w-[4vw] h-[4vw] rounded-[0.5vw] blur-md absolute -z-1"
                         src="assets/GSAP-logo.avif"
@@ -296,6 +312,9 @@
                         alt="GSAP-logo"
                       />
                       <p>GSAP</p>
+                      <sup class="translate-x-[-100%] font-extralight scale-50"
+                        >4</sup
+                      >
                     </div>
                   </article>
 
@@ -303,7 +322,10 @@
                   <article
                     class="flex flex-row gap-[5vw] w-max animate-marquee"
                   >
-                    <div class="relative flex flex-row gap-[1vw] items-center">
+                    <div
+                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
+                      data-bg-color="#BF4322"
+                    >
                       <img
                         class="w-[4vw] h-[4vw] rounded-[0.5vw] blur-md absolute -z-1"
                         src="assets/HTML-logo.webp"
@@ -315,9 +337,15 @@
                         alt="HTML-logo"
                       />
                       <p>HTML</p>
+                      <sup class="translate-x-[-100%] font-extralight scale-50"
+                        >1</sup
+                      >
                     </div>
                     <!--  -->
-                    <div class="relative flex flex-row gap-[1vw] items-center">
+                    <div
+                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
+                      data-bg-color="#15C2B8"
+                    >
                       <img
                         class="w-[4vw] h-[4vw] rounded-[0.5vw] blur-md absolute -z-1"
                         src="assets/tailwind-css-image.png"
@@ -329,9 +357,15 @@
                         alt="tw-logo"
                       />
                       <p>Tailwind CSS</p>
+                      <sup class="translate-x-[-100%] font-extralight scale-50"
+                        >2</sup
+                      >
                     </div>
                     <!--  -->
-                    <div class="relative flex flex-row gap-[1vw] items-center">
+                    <div
+                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
+                      data-bg-color="#F0DB4F"
+                    >
                       <img
                         class="w-[4vw] h-[4vw] rounded-[0.5vw] blur-md absolute -z-1"
                         src="assets/JavaScript-logo.png"
@@ -343,9 +377,15 @@
                         alt="JavaScript-logo"
                       />
                       <p>JavaScript</p>
+                      <sup class="translate-x-[-100%] font-extralight scale-50"
+                        >3</sup
+                      >
                     </div>
                     <!--  -->
-                    <div class="relative flex flex-row gap-[1vw] items-center">
+                    <div
+                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
+                      data-bg-color="#0BE348"
+                    >
                       <img
                         class="w-[4vw] h-[4vw] rounded-[0.5vw] blur-md absolute -z-1"
                         src="assets/GSAP-logo.avif"
@@ -357,6 +397,9 @@
                         alt="GSAP-logo"
                       />
                       <p>GSAP</p>
+                      <sup class="translate-x-[-100%] font-extralight scale-50"
+                        >4</sup
+                      >
                     </div>
                   </article>
                 </div>
