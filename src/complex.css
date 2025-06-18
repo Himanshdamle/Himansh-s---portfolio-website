@@ -1,0 +1,35 @@
+@media (width <= 472px) {
+  .fst-media {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.kotta-one-font {
+  font-family: "Kotta One", serif;
+}
+.highlight-kof {
+  font-family: "Kotta One", serif;
+
+  background-color: #193d4a;
+  font-size: 1.875rem;
+}
+
+.xl-text {
+  font-size: 1.875rem;
+}
+.lg-text {
+  font-size: 1.6rem;
+}
+
+@media (min-width: 1024px) {
+  .xl-text {
+    font-size: 2.5vw;
+  }
+  .lg-text {
+    font-size: 1.9vw;
+  }
+  .highlight-kof {
+    font-size: 2.3vw;
+  }
+}

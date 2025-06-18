@@ -1,11 +1,12 @@
 export function popImage(idObject = {}, setting = {}) {
-  console.log(document.body.offsetWidth <= 1025, document.body.offsetWidth);
-
   if (document.body.offsetWidth <= 1025) return;
 
   const nameWrapper = document.querySelector(`#${idObject.hoveringLayer}`);
   const imgBox = document.querySelector(`#${idObject.imgBox}`);
   const rightSlider = document.querySelector(`#${idObject.slider}`);
+
+  // make it visible
+  gsap.set(imgBox, { display: "block" });
 
   const hideSettings = {
     scale: 0,
@@ -49,8 +50,33 @@ export function popImage(idObject = {}, setting = {}) {
   });
 }
 
+export function cardTiltAnimation(card, hoveringLayer, setting) {
+  hoveringLayer.addEventListener("mousemove", (e) => {
+    console.log("hel;l");
+
+    const bounds = hoveringLayer.getBoundingClientRect();
+    const centerX = bounds.left + bounds.width / 2;
+    const centerY = bounds.top + bounds.height / 2;
+
+    const offsetX = e.clientX - centerX;
+    const offsetY = e.clientY - centerY;
+
+    gsap.to(card, {
+      rotateX: -offsetY / setting.xSensi,
+      rotateY: offsetX / setting.ySensi,
+      duration: setting.duration || 0.4,
+      ease: setting.ease || "power2.out",
+
+      transformPerspective: 800,
+      transformOrigin: "center",
+    });
+  });
+}
+
 function move3DText() {
-  const container = document.body;
+  if (document.body.offsetWidth <= 1025) return;
+
+  const container = document.querySelector("#landing-page-section");
 
   const grp1Txt = document.querySelectorAll(".move-txt-grp1");
   const grp2Txt = document.querySelectorAll(".move-txt-grp2");
@@ -180,6 +206,8 @@ function changeMarqueeBG() {
 
   const marqueesContent = document.querySelectorAll(".marquee-content");
 
+  const skillsImgDisplays = document.querySelectorAll(".skills-img-display");
+
   function removeOpacity() {
     marqueesContent.forEach((marqueeContent) => {
       gsap.to(marqueeContent, {
@@ -188,6 +216,8 @@ function changeMarqueeBG() {
       });
     });
   }
+
+  let hoveredSkillIndex = 0;
 
   marquees.forEach((marquee) => {
     marquee.addEventListener(
@@ -198,21 +228,51 @@ function changeMarqueeBG() {
 
         removeOpacity();
 
+        gsap.to(skillsImgDisplays[hoveredSkillIndex], {
+          rotateX: 0,
+          rotateY: 0,
+          duration: 0.4,
+          ease: "power2.out",
+        });
+
         if (!targetedMarquee) return;
 
         if (!targetedMarquee.classList.contains("marquee-content")) return;
 
+        // BACKGROUND COLOR CHANGE
         gsap.to(marqueeWrapper, {
           backgroundColor: `${targetedMarquee.getAttribute("data-bg-color")}3d`,
           duration: 0.3,
         });
 
-        marqueesContent.forEach((marqueeContent) => {
-          if (marqueeContent !== targetedMarquee)
-            gsap.to(marqueeContent, {
-              opacity: 0.3,
-              duration: 0.3,
+        // FOCUS
+        marqueesContent.forEach((marqueeContent, index) => {
+          if (marqueeContent == targetedMarquee) {
+            hoveredSkillIndex = index;
+
+            const bounds = marqueeContent.getBoundingClientRect();
+            const centerX = bounds.left + bounds.width / 2;
+            const centerY = bounds.top + bounds.height / 2;
+
+            const offsetX = e.clientX - centerX;
+            const offsetY = e.clientY - centerY;
+
+            gsap.to(skillsImgDisplays[hoveredSkillIndex], {
+              rotateX: -offsetY / 2,
+              rotateY: offsetX / 3,
+              duration: 0.4,
+              ease: "power2.out",
+              transformPerspective: 800,
+              transformOrigin: "center",
             });
+
+            return;
+          }
+
+          gsap.to(marqueeContent, {
+            opacity: 0.3,
+            duration: 0.3,
+          });
         });
       },
       true
@@ -221,6 +281,37 @@ function changeMarqueeBG() {
 
   marqueeWrapper.addEventListener("mouseleave", () => {
     removeOpacity();
+
+    gsap.to(skillsImgDisplays[hoveredSkillIndex], {
+      rotateX: 0,
+      rotateY: 0,
+      duration: 0.4,
+      ease: "power2.out",
+    });
   });
 }
 changeMarqueeBG();
+
+function loop(selector = "", setting = {}) {
+  const t = gsap.timeline({ ease: "none" });
+
+  t.to(selector, {
+    y: "-100%",
+    duration: 0.9,
+    delay: setting.delay || 0.1,
+  })
+    .set(selector, { y: 0 })
+    .to(selector, {
+      y: 0,
+      duration: 0.9,
+      onComplete() {
+        if (setting.onCompleteAnimation) setting.onCompleteAnimation();
+      },
+    });
+}
+
+loop(".ia-grp-box-1", {});
+loop(".ia-grp-box-2", { delay: 0.2 });
+loop(".ia-grp-box-3", { delay: 0.3 });
+
+loop(".ia-web", { delay: 0 });

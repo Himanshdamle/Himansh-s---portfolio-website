@@ -1,4 +1,7 @@
-import { popImage } from "./animation.js";
+import { popImage, cardTiltAnimation } from "./animation.js";
+import { initializeLocomotiveJS } from "./locomotive.js";
+
+initializeLocomotiveJS();
 
 popImage(
   {
@@ -16,4 +19,16 @@ popImage(
     slider: "desktop-right-slider",
   },
   { xPercentInitial: -50, gap: 10 }
+);
+
+cardTiltAnimation(
+  document.querySelector("#himansh-img"),
+  document.querySelector("#name-wrapper"),
+  { xSensi: 10, ySensi: 10 }
+);
+
+cardTiltAnimation(
+  document.querySelector("#himansh-desktop"),
+  document.querySelector("#desktop-showcase-wrapper"),
+  { xSensi: 10, ySensi: 10 }
 );
