@@ -1,3 +1,10 @@
+.c-scrollbar {
+  display: none !important;
+}
+button {
+  cursor: pointer;
+}
+
 @media (width <= 472px) {
   .fst-media {
     flex-direction: column;

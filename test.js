@@ -1,42 +1,43 @@
-function loop(selector = "", setting = {}) {
-  const t = gsap.timeline({ ease: "none" });
+import * as THREE from "https://unpkg.com/three@0.160.1/build/three.module.js";
+import { OrbitControls } from "https://unpkg.com/three@0.160.1/examples/jsm/controls/OrbitControls.js";
 
-  t.to(selector, {
-    y: "-100%",
-    duration: 0.9,
-    delay: setting.delay || 0.1,
-  })
-    .set(selector, { y: 0 })
-    .to(selector, {
-      y: 0,
-      duration: 0.9,
-      onComplete() {
-        if (setting.onCompleteAnimation) setting.onCompleteAnimation();
-      },
-    });
-}
+// Scene
+const scene = new THREE.Scene();
 
-loop(".ia-grp-box-1", {});
-loop(".ia-grp-box-2", { delay: 0.2 });
-loop(".ia-grp-box-3", { delay: 0.3 });
+// Cube
+const geometry = new THREE.BoxGeometry(2, 2, 2);
+const material = new THREE.MeshBasicMaterial({ color: "green" });
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
 
-loop(".ia-web", {
-  delay: 0,
+// Camera
+const camera = new THREE.PerspectiveCamera(
+  75,
+  window.innerWidth / window.innerHeight
+);
+camera.position.set(-3, 0, 4);
 
-  onCompleteAnimation() {
-    gsap.to("#ia-web-wrapper", {
-      y: "100%",
-      duration: 1,
-      ease: "expo.in", // add ease here
+// Renderer
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
 
-      onComplete() {
-        gsap.to("#ia-container", {
-          x: "30%",
-          y: "150%",
-          duration: 1,
-          ease: "expo.out", // and here
-        });
-      },
-    });
-  },
+// Controls
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.1;
+
+// Resize
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
 });
+
+// Animate
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();

@@ -45,6 +45,137 @@
     style="font-family: 'Instrument Sans', sans-serif"
     data-scroll-container
   >
+    <!-- CUSTOM SCROLL BAR -->
+    <aside
+      class="lg:flex hidden w-max fixed right-0 top-0 h-screen flex-col items-center z-50 xl-text"
+    >
+      <a
+        href="#landing-page-section"
+        class="flex flex-row justify-end items-center gap-[0.8vw]"
+        id="top-scroll-box"
+      >
+        <div class="h-7 md:h-[4vw] kotta-one-font">
+          <p
+            class="font-semibold text-transparent"
+            style="-webkit-text-stroke: 0.5px white; color: transparent"
+          >
+            TOP
+          </p>
+          <p class="font-semibold translate-y-[-100%]" id="top-scroll-bold-txt">
+            TOP
+          </p>
+        </div>
+
+        <!-- UP ARROW -->
+        <div>
+          <!-- 1 -->
+          <img
+            src="assets/arrow_1.svg"
+            alt="arrow"
+            class="up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+          />
+          <!-- 2 -->
+          <img
+            src="assets/arrow_2.svg"
+            alt="arrow"
+            class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+          />
+          <!-- 3 -->
+          <img
+            src="assets/arrow_3.svg"
+            alt="arrow"
+            class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+          />
+          <!-- 4 -->
+          <img
+            src="assets/arrow_4.svg"
+            alt="arrow"
+            class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+          />
+          <!-- 5 -->
+          <img
+            src="assets/arrow_5.svg"
+            alt="arrow"
+            class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+          />
+        </div>
+      </a>
+
+      <!-- BAR -->
+      <main class="h-full w-[1vw] flex flex-col gap-[0.8vh]">
+        <a
+          href="#"
+          class="w-full h-[30%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
+        ></a>
+        <!--  -->
+        <a
+          href="#"
+          class="w-full h-[30%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
+        ></a>
+        <!--  -->
+        <a
+          href="#"
+          class="w-full h-[40%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
+        ></a>
+      </main>
+
+      <!--  -->
+      <a
+        href="#landing-page-section"
+        class="flex flex-row justify-end items-center gap-[0.8vw]"
+        id="bottom-scroll-box"
+      >
+        <div class="h-7 md:h-[3vw] kotta-one-font">
+          <p
+            class="font-semibold text-transparent"
+            style="-webkit-text-stroke: 0.5px white; color: transparent"
+          >
+            Bottom
+          </p>
+          <p
+            class="font-semibold translate-y-[-100%]"
+            id="bottom-scroll-bold-txt"
+          >
+            Bottom
+          </p>
+        </div>
+
+        <!-- DOWN ARROW -->
+        <div>
+          <!-- 1 -->
+          <img
+            src="assets/arrow_1.svg"
+            alt="arrow"
+            class="arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+          />
+          <!-- 2 -->
+          <img
+            src="assets/arrow_2.svg"
+            alt="arrow"
+            class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+          />
+          <!-- 3 -->
+          <img
+            src="assets/arrow_3.svg"
+            alt="arrow"
+            class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+          />
+          <!-- 4 -->
+          <img
+            src="assets/arrow_4.svg"
+            alt="arrow"
+            class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+          />
+          <!-- 5 -->
+          <img
+            src="assets/arrow_5.svg"
+            alt="arrow"
+            class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+          />
+        </div>
+      </a>
+    </aside>
+
     <div data-scroll-section>
       <!-- CONTENT -->
       <section
@@ -60,7 +191,12 @@
             class="h-screen flex flex-col items-center justify-center gap-15 sm:gap-[4vh]"
           >
             <div class="flex flex-col md:gap-[0.5vw]">
-              <article class="w-max">
+              <article
+                data-scroll
+                data-scroll-direction="horizontal"
+                data-scroll-speed="2"
+                class="w-max"
+              >
                 <div class="tracking-wide">
                   <h3 class="flex flex-row">
                     <div id="word" class="flex flex-row">
@@ -194,6 +330,9 @@
 
               <!--  -->
               <article
+                data-scroll
+                data-scroll-direction="horizontal"
+                data-scroll-speed="-2"
                 class="w-full md:w-max flex fst-media flex-row gap-1.5 md:ml-[15vw]"
               >
                 <div class="tracking-wide">
@@ -275,36 +414,37 @@
 
                 <!-- STAR -->
                 <article>
+                  <!-- 1 -->
                   <img
                     src="assets/star_1.svg"
                     alt="star"
                     class="stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
                   />
-                  <!--  -->
+                  <!-- 2 -->
                   <img
                     src="assets/star_2.svg"
                     alt="star"
                     class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
                   />
-
+                  <!-- 3 -->
                   <img
                     src="assets/star_3.svg"
                     alt="star"
                     class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
                   />
-                  <!--  -->
+                  <!-- 4 -->
                   <img
                     src="assets/star_4.svg"
                     alt="star"
                     class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
                   />
-                  <!--  -->
+                  <!-- 5 -->
                   <img
                     src="assets/star_5.svg"
                     alt="star"
                     class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
                   />
-                  <!--  -->
+                  <!-- 6 -->
                   <img
                     src="assets/star_6.svg"
                     alt="star"
@@ -514,9 +654,57 @@
           </section>
 
           <section class="w-full flex flex-col gap-1.5 md:gap-[1vw]">
-            <article class="font-semibold">
-              <div>
-                <p>Who am i ?</p>
+            <article
+              class="font-semibold flex flex-col justify-center gap-1.5 md:gap-[1vw]"
+            >
+              <div class="flex flex-row w-max" id="about-me-section">
+                <span class="h-7 md:h-[3vw] inline-block">
+                  <p
+                    class="font-semibold text-transparent"
+                    style="-webkit-text-stroke: 1px white; color: transparent"
+                  >
+                    Who am i
+                  </p>
+                  <p
+                    class="font-semibold translate-y-[-100%]"
+                    id="about-me-bold-txt"
+                  >
+                    Who am i
+                  </p>
+                </span>
+
+                <span>
+                  <!-- 1 -->
+                  <img
+                    src="assets/qm_1.svg"
+                    alt="qm"
+                    class="question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                  <!-- 2 -->
+                  <img
+                    src="assets/qm_2.svg"
+                    alt="qm"
+                    class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                  <!-- 3 -->
+                  <img
+                    src="assets/qm_3.svg"
+                    alt="qm"
+                    class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                  <!-- 4 -->
+                  <img
+                    src="assets/qm_4.svg"
+                    alt="qm"
+                    class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                  <!-- 5 -->
+                  <img
+                    src="assets/qm_5.svg"
+                    alt="qm"
+                    class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                </span>
               </div>
 
               <div class="h-0.5 bg-white w-full"></div>

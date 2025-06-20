@@ -52,8 +52,6 @@ export function popImage(idObject = {}, setting = {}) {
 
 export function cardTiltAnimation(card, hoveringLayer, setting) {
   hoveringLayer.addEventListener("mousemove", (e) => {
-    console.log("hel;l");
-
     const bounds = hoveringLayer.getBoundingClientRect();
     const centerX = bounds.left + bounds.width / 2;
     const centerY = bounds.top + bounds.height / 2;
@@ -70,6 +68,52 @@ export function cardTiltAnimation(card, hoveringLayer, setting) {
       transformPerspective: 800,
       transformOrigin: "center",
     });
+  });
+}
+
+export function hoverToExpandTxt(hoveringLayer, boldTxt, setting = {}) {
+  const commonSetting = {
+    duration: setting.duration || 0.5,
+    ease: setting.ease || "power1.in",
+  };
+
+  hoveringLayer.addEventListener("mouseenter", () => {
+    gsap.to(boldTxt, {
+      x: setting.expand || 4,
+      ...commonSetting,
+    });
+  });
+
+  hoveringLayer.addEventListener("mouseleave", () => {
+    gsap.to(boldTxt, {
+      x: 0,
+      ...commonSetting,
+    });
+  });
+}
+
+export function rapidChangeEffect(hoveringLayer, multipleImage, intervalTime) {
+  const starLen = multipleImage.length;
+
+  let count = 0,
+    intervalId;
+
+  hoveringLayer.addEventListener("mouseenter", () => {
+    intervalId = setInterval(() => {
+      multipleImage[count].classList.add("hidden");
+      multipleImage[count + 1].classList.remove("hidden");
+
+      if (count === starLen - 2) {
+        multipleImage[0].classList.remove("hidden");
+        multipleImage[count + 1].classList.add("hidden");
+
+        count = 0;
+      } else count++;
+    }, intervalTime || 300);
+  });
+
+  hoveringLayer.addEventListener("mouseleave", () => {
+    clearInterval(intervalId);
   });
 }
 
@@ -119,59 +163,6 @@ function move3DText() {
   });
 }
 move3DText();
-
-function hoverToExpand() {
-  const txtSection = document.querySelector("#core-skills-section");
-  const boldTxt = document.querySelector("#cs-bold-txt");
-
-  const commonSetting = { duration: 0.5 };
-
-  txtSection.addEventListener("mouseenter", () => {
-    gsap.to(boldTxt, {
-      x: 4,
-      ...commonSetting,
-      ease: "power1.in",
-    });
-  });
-
-  txtSection.addEventListener("mouseleave", () => {
-    gsap.to(boldTxt, {
-      x: 0,
-      ...commonSetting,
-      ease: "power1.out",
-    });
-  });
-}
-hoverToExpand();
-
-function changeStars() {
-  const stars = document.querySelectorAll(".stars");
-  const hoverLayer = document.querySelector("#core-skills-section");
-
-  const starLen = stars.length;
-
-  let count = 0,
-    intervalId;
-
-  hoverLayer.addEventListener("mouseenter", () => {
-    intervalId = setInterval(() => {
-      stars[count].classList.add("hidden");
-      stars[count + 1].classList.remove("hidden");
-
-      if (count === starLen - 2) {
-        stars[0].classList.remove("hidden");
-        stars[count + 1].classList.add("hidden");
-
-        count = 0;
-      } else count++;
-    }, 300);
-  });
-
-  hoverLayer.addEventListener("mouseleave", () => {
-    clearInterval(intervalId);
-  });
-}
-changeStars();
 
 function animateMarquee() {
   const marquees = document.querySelectorAll(".animate-marquee");
