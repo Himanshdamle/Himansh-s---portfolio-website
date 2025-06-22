@@ -8,4 +8,15 @@ export function initializeLocomotiveJS() {
     getDirection: true,
     getSpeed: true,
   });
+
+  document.querySelectorAll(["data-scroll-to"]).forEach((link) => {
+    link.addEventListener("click", () => {
+      const targetId = link.getAttribute("href");
+      const targetElem = document.querySelector(targetId);
+
+      if (!targetElem) return;
+
+      scroll.scrollTo(targetElem);
+    });
+  });
 }

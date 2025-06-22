@@ -39,6 +39,7 @@
     <link href="src\complex.css" rel="stylesheet" />
 
     <script type="module" src="script.js" defer></script>
+    <script type="module" src="animations/nonsharedAnime.js" defer></script>
   </head>
   <body
     class="bg-[#111111] text-white"
@@ -47,25 +48,15 @@
   >
     <!-- CUSTOM SCROLL BAR -->
     <aside
+      id="custom-scroll-bar-container"
       class="lg:flex hidden w-max fixed right-0 top-0 h-screen flex-col items-center z-50 xl-text"
     >
       <a
         href="#landing-page-section"
+        data-scroll-to
         class="flex flex-row justify-end items-center gap-[0.8vw]"
         id="top-scroll-box"
       >
-        <div class="h-7 md:h-[4vw] kotta-one-font">
-          <p
-            class="font-semibold text-transparent"
-            style="-webkit-text-stroke: 0.5px white; color: transparent"
-          >
-            TOP
-          </p>
-          <p class="font-semibold translate-y-[-100%]" id="top-scroll-bold-txt">
-            TOP
-          </p>
-        </div>
-
         <!-- UP ARROW -->
         <div>
           <!-- 1 -->
@@ -101,10 +92,11 @@
         </div>
       </a>
 
-      <!-- BAR -->
+      <!-- BARS -->
       <main class="h-full w-[1vw] flex flex-col gap-[0.8vh]">
         <a
-          href="#"
+          data-scroll-to
+          href="#about-me-section"
           class="w-full h-[30%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
         ></a>
         <!--  -->
@@ -125,21 +117,6 @@
         class="flex flex-row justify-end items-center gap-[0.8vw]"
         id="bottom-scroll-box"
       >
-        <div class="h-7 md:h-[3vw] kotta-one-font">
-          <p
-            class="font-semibold text-transparent"
-            style="-webkit-text-stroke: 0.5px white; color: transparent"
-          >
-            Bottom
-          </p>
-          <p
-            class="font-semibold translate-y-[-100%]"
-            id="bottom-scroll-bold-txt"
-          >
-            Bottom
-          </p>
-        </div>
-
         <!-- DOWN ARROW -->
         <div>
           <!-- 1 -->
@@ -182,13 +159,20 @@
         class="bg-repeat backdrop-blur-[10px] xl-text"
         style="background-image: url('assets/noice.svg')"
       >
-        <nav></nav>
+        <nav class="fixed pt-[2vh] px-[2vw]">
+          <section>
+            <div>
+              <span class="kotta-one-font">Himansh</span>
+              <span class="font-semibold">Web</span>
+            </div>
+          </section>
+        </nav>
 
         <!--  -->
         <main class="px-[2vw]">
           <section
             id="landing-page-section"
-            class="h-screen flex flex-col items-center justify-center gap-15 sm:gap-[4vh]"
+            class="h-screen flex flex-col justify-center items-center gap-7 sm:gap-[4vh]"
           >
             <div class="flex flex-col md:gap-[0.5vw]">
               <article
@@ -213,7 +197,7 @@
 
                 <!-- imp -->
                 <div
-                  class="relative w-max text-7xl lg:text-[6vw] font-semibold tracking-wider -mt-3.5 h-20 md:h-[8vw] lg:h-[6vw] flex flex-row gap-0 lg:gap-2.5 2xl:gap-[1vw]"
+                  class="relative w-max text-7xl lg:text-[6vw] font-semibold tracking-wider -mt-3.5 h-20 md:h-[9vw] lg:h-[6vw] flex flex-row gap-0 lg:gap-2.5 2xl:gap-[1.2vw]"
                   id="name-container"
                 >
                   <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
@@ -333,65 +317,85 @@
                 data-scroll
                 data-scroll-direction="horizontal"
                 data-scroll-speed="-2"
-                class="w-full md:w-max flex fst-media flex-row gap-1.5 md:ml-[15vw]"
+                class="w-full flex flex-col-reverse gap-7 md:gap-0 md:flex-row md:w-max"
               >
-                <div class="tracking-wide">
-                  <span>And i am a</span>
-                </div>
-
-                <!-- imp -->
-                <div class="text-center tracking-wider flex flex-col">
-                  <div
-                    class="text-4xl sm:text-5xl lg:text-[4vw] font-bold flex flex-row justify-center gap-2.5 relative"
-                  >
-                    <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
+                <section
+                  data-scroll
+                  data-scroll-direction="horizontal"
+                  data-scroll-speed="4"
+                  class="self-center md:mt-14 lg-text"
+                  id="timing-box"
+                >
+                  <div class="flex flex-row items-center gap-2">
+                    <span class="tricolor-gradient" id="india-txt">India</span>
                     <div
-                      class="w-full h-full bg-transparent absolute z-50 top-3"
-                      id="desktop-showcase-wrapper"
+                      class="bg-white/50 backdrop-blur-2xl rounded-full w-1 h-1 2xl:w-[0.6vw] 2xl:h-[0.6vw]"
                     ></div>
-
-                    <section id="ia-web-wrapper">
-                      <article
-                        class="h-9 sm:h-[48px] lg:h-[4vw] overflow-hidden font-semibold"
-                      >
-                        <div class="ia-web">
-                          <h1>Web</h1>
-                          <h1>Web</h1>
-                        </div>
-                        <div class="ia-web">
-                          <h1>Web</h1>
-                          <h1>Web</h1>
-                        </div>
-                      </article>
-                    </section>
-
-                    <!-- image -->
-                    <section
-                      id="himansh-desktop-box"
-                      class="w-35 h-25 lg:w-[10vw] lg:h-[6vw] relative translate-y-[-40%] hidden"
+                    <span class="kotta-one-font static" id="show-time"
+                      >14:34:55</span
                     >
-                      <img
-                        src="assets/my_desktop.jpg"
-                        alt="Himansh's desktop"
-                        class="rounded-[5px] w-full h-full absolute top-0 left-0 -z-1 blur-lg saturate-200 brightness-200"
-                      />
-                      <img
-                        src="assets/my_desktop.jpg"
-                        alt="Himansh's desktop"
-                        id="himansh-desktop"
-                        class="rounded-[0.4vw] w-full h-full"
-                      />
-                    </section>
+                  </div>
+                </section>
 
-                    <section id="desktop-right-slider">
-                      <h1>Developer</h1>
-                    </section>
+                <section class="flex fst-media flex-row gap-1.5">
+                  <div class="tracking-wide leading-tight">
+                    <span>And i am a</span>
                   </div>
 
-                  <h1 class="lg:translate-x-[-10%] lg:translate-y-[-60%]">
-                    { Frontend }
-                  </h1>
-                </div>
+                  <!-- imp -->
+                  <div class="text-center tracking-wider flex flex-col">
+                    <div
+                      class="text-4xl sm:text-5xl lg:text-[4vw] font-bold flex flex-row justify-center gap-2.5 2xl:gap-[1vw] relative"
+                    >
+                      <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
+                      <div
+                        class="w-full h-full bg-transparent absolute z-50 top-3"
+                        id="desktop-showcase-wrapper"
+                      ></div>
+
+                      <section id="ia-web-wrapper">
+                        <article
+                          class="h-9 sm:h-[48px] lg:h-[4vw] overflow-hidden font-semibold"
+                        >
+                          <div class="ia-web">
+                            <h1>Web</h1>
+                            <h1>Web</h1>
+                          </div>
+                          <div class="ia-web">
+                            <h1>Web</h1>
+                            <h1>Web</h1>
+                          </div>
+                        </article>
+                      </section>
+
+                      <!-- image -->
+                      <section
+                        id="himansh-desktop-box"
+                        class="w-35 h-25 lg:w-[10vw] lg:h-[6vw] relative translate-y-[-40%] hidden"
+                      >
+                        <img
+                          src="assets/my_desktop.jpg"
+                          alt="Himansh's desktop"
+                          class="rounded-[5px] w-full h-full absolute top-0 left-0 -z-1 blur-lg saturate-200 brightness-200"
+                        />
+                        <img
+                          src="assets/my_desktop.jpg"
+                          alt="Himansh's desktop"
+                          id="himansh-desktop"
+                          class="rounded-[0.4vw] w-full h-full"
+                        />
+                      </section>
+
+                      <section id="desktop-right-slider">
+                        <h1>Developer</h1>
+                      </section>
+                    </div>
+
+                    <h1 class="lg:translate-x-[-10%] lg:translate-y-[-60%]">
+                      { Frontend }
+                    </h1>
+                  </div>
+                </section>
               </article>
             </div>
 
@@ -399,8 +403,11 @@
             <div
               class="flex flex-col justify-center items-center gap-[3vh] lg:w-[80%] w-full"
             >
-              <section class="flex flex-row gap-1.5" id="core-skills-section">
-                <article class="h-7 md:h-[2.5vw]">
+              <section
+                class="flex flex-row items-center justify-center gap-1.5"
+                id="core-skills-section"
+              >
+                <article class="h-7 md:h-[3vw]">
                   <p
                     class="font-semibold text-transparent"
                     style="-webkit-text-stroke: 1px white; color: transparent"
@@ -653,11 +660,14 @@
             </div>
           </section>
 
-          <section class="w-full flex flex-col gap-1.5 md:gap-[1vw]">
+          <section
+            id="about-me-section"
+            class="w-full flex flex-col gap-1.5 md:gap-[1vw]"
+          >
             <article
               class="font-semibold flex flex-col justify-center gap-1.5 md:gap-[1vw]"
             >
-              <div class="flex flex-row w-max" id="about-me-section">
+              <div class="flex flex-row w-max" id="wmi-container">
                 <span class="h-7 md:h-[3vw] inline-block">
                   <p
                     class="font-semibold text-transparent"
@@ -734,7 +744,7 @@
 
               <section>
                 <ul
-                  class="flex flex-col gap-4 md:gap-[3vh] leading-tight lg-text"
+                  class="flex flex-col gap-8 md:gap-[3vh] leading-tight lg-text"
                 >
                   <!-- INTRO -->
                   <li>

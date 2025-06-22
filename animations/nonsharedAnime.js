@@ -1,121 +1,4 @@
-export function popImage(idObject = {}, setting = {}) {
-  if (document.body.offsetWidth <= 1025) return;
-
-  const nameWrapper = document.querySelector(`#${idObject.hoveringLayer}`);
-  const imgBox = document.querySelector(`#${idObject.imgBox}`);
-  const rightSlider = document.querySelector(`#${idObject.slider}`);
-
-  // make it visible
-  gsap.set(imgBox, { display: "block" });
-
-  const hideSettings = {
-    scale: 0,
-    opacity: 0,
-    filter: "blur(10px)",
-  };
-
-  const imgWidth = imgBox.getBoundingClientRect().width + setting.gap || 10;
-
-  gsap.set(imgBox, {
-    ...hideSettings,
-  });
-
-  gsap.set(rightSlider, { xPercent: setting.xPercentInitial || 50 });
-
-  nameWrapper.addEventListener("mouseenter", () => {
-    gsap.to(imgBox, {
-      scale: 1,
-      filter: "blur(0px)",
-      opacity: 1,
-      ease: "back.out(1.7)",
-      duration: 0.4,
-    });
-
-    gsap.to(rightSlider, {
-      x: imgWidth,
-      duration: 0.4,
-    });
-  });
-
-  nameWrapper.addEventListener("mouseleave", () => {
-    gsap.to(imgBox, {
-      ...hideSettings,
-      duration: 0.4,
-    });
-
-    gsap.to(rightSlider, {
-      x: 0,
-      duration: 0.4,
-    });
-  });
-}
-
-export function cardTiltAnimation(card, hoveringLayer, setting) {
-  hoveringLayer.addEventListener("mousemove", (e) => {
-    const bounds = hoveringLayer.getBoundingClientRect();
-    const centerX = bounds.left + bounds.width / 2;
-    const centerY = bounds.top + bounds.height / 2;
-
-    const offsetX = e.clientX - centerX;
-    const offsetY = e.clientY - centerY;
-
-    gsap.to(card, {
-      rotateX: -offsetY / setting.xSensi,
-      rotateY: offsetX / setting.ySensi,
-      duration: setting.duration || 0.4,
-      ease: setting.ease || "power2.out",
-
-      transformPerspective: 800,
-      transformOrigin: "center",
-    });
-  });
-}
-
-export function hoverToExpandTxt(hoveringLayer, boldTxt, setting = {}) {
-  const commonSetting = {
-    duration: setting.duration || 0.5,
-    ease: setting.ease || "power1.in",
-  };
-
-  hoveringLayer.addEventListener("mouseenter", () => {
-    gsap.to(boldTxt, {
-      x: setting.expand || 4,
-      ...commonSetting,
-    });
-  });
-
-  hoveringLayer.addEventListener("mouseleave", () => {
-    gsap.to(boldTxt, {
-      x: 0,
-      ...commonSetting,
-    });
-  });
-}
-
-export function rapidChangeEffect(hoveringLayer, multipleImage, intervalTime) {
-  const starLen = multipleImage.length;
-
-  let count = 0,
-    intervalId;
-
-  hoveringLayer.addEventListener("mouseenter", () => {
-    intervalId = setInterval(() => {
-      multipleImage[count].classList.add("hidden");
-      multipleImage[count + 1].classList.remove("hidden");
-
-      if (count === starLen - 2) {
-        multipleImage[0].classList.remove("hidden");
-        multipleImage[count + 1].classList.add("hidden");
-
-        count = 0;
-      } else count++;
-    }, intervalTime || 300);
-  });
-
-  hoveringLayer.addEventListener("mouseleave", () => {
-    clearInterval(intervalId);
-  });
-}
+import { cardTiltAnimation } from "./coreAnimations.js";
 
 function move3DText() {
   if (document.body.offsetWidth <= 1025) return;
@@ -210,14 +93,14 @@ function changeMarqueeBG() {
 
   let hoveredSkillIndex = 0;
 
+  const sensitivityTilt = document.body.offsetWidth / 400;
+
   marquees.forEach((marquee) => {
     marquee.addEventListener(
       "mousemove",
       (e) => {
         const target = e.target;
         const targetedMarquee = target.closest(".marquee-content");
-
-        removeOpacity();
 
         gsap.to(skillsImgDisplays[hoveredSkillIndex], {
           rotateX: 0,
@@ -230,6 +113,8 @@ function changeMarqueeBG() {
 
         if (!targetedMarquee.classList.contains("marquee-content")) return;
 
+        removeOpacity();
+
         // BACKGROUND COLOR CHANGE
         gsap.to(marqueeWrapper, {
           backgroundColor: `${targetedMarquee.getAttribute("data-bg-color")}3d`,
@@ -241,21 +126,16 @@ function changeMarqueeBG() {
           if (marqueeContent == targetedMarquee) {
             hoveredSkillIndex = index;
 
-            const bounds = marqueeContent.getBoundingClientRect();
-            const centerX = bounds.left + bounds.width / 2;
-            const centerY = bounds.top + bounds.height / 2;
-
-            const offsetX = e.clientX - centerX;
-            const offsetY = e.clientY - centerY;
-
-            gsap.to(skillsImgDisplays[hoveredSkillIndex], {
-              rotateX: -offsetY / 2,
-              rotateY: offsetX / 3,
-              duration: 0.4,
-              ease: "power2.out",
-              transformPerspective: 800,
-              transformOrigin: "center",
-            });
+            cardTiltAnimation(
+              skillsImgDisplays[hoveredSkillIndex],
+              marqueeContent,
+              {
+                xSensi: sensitivityTilt,
+                ySensi: sensitivityTilt,
+                addEventListener: false,
+                e,
+              }
+            );
 
             return;
           }
@@ -300,9 +180,88 @@ function loop(selector = "", setting = {}) {
       },
     });
 }
-
 loop(".ia-grp-box-1", {});
 loop(".ia-grp-box-2", { delay: 0.2 });
 loop(".ia-grp-box-3", { delay: 0.3 });
 
 loop(".ia-web", { delay: 0 });
+
+function customScrollBar() {
+  const scrollBarContainer = document.querySelector(
+    "#custom-scroll-bar-container"
+  );
+
+  const basicSetting = {
+    duration: 0.2,
+    ease: "none",
+  };
+
+  scrollBarContainer.addEventListener("mouseenter", () => {
+    gsap.to(scrollBarContainer, {
+      opacity: 1,
+      ...basicSetting,
+    });
+  });
+
+  scrollBarContainer.addEventListener("mouseleave", () => {
+    gsap.to(scrollBarContainer, {
+      opacity: 0,
+      ...basicSetting,
+    });
+  });
+}
+customScrollBar();
+
+function showISTTime() {
+  const timeElem = document.querySelector("#show-time");
+
+  const options = {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  };
+
+  const formatter = new Intl.DateTimeFormat("en-IN", options);
+
+  function changeTime() {
+    const timeString = formatter.format(new Date());
+
+    timeElem.textContent = timeString;
+  }
+
+  changeTime();
+  setInterval(changeTime, 1000);
+}
+showISTTime();
+
+function textGradientEffect() {
+  const txt = document.querySelector("#india-txt");
+  const hoveringLayer = document.querySelector("#timing-box");
+
+  let tween;
+
+  hoveringLayer.addEventListener("mouseenter", () => {
+    txt.style["-webkit-text-fill-color"] = "transparent";
+    tween = gsap.to(txt, {
+      backgroundPosition: "100% 100%",
+      backgroundSize: "100%",
+      duration: 0.5,
+    });
+  });
+
+  hoveringLayer.addEventListener("mouseleave", () => {
+    if (tween) tween.kill();
+    gsap.to(txt, {
+      backgroundPosition: "50% 0%",
+      backgroundSize: "400%",
+      duration: 0.5,
+      onComplete() {
+        txt.style["-webkit-text-fill-color"] = "unset";
+      },
+    });
+  });
+}
+
+textGradientEffect();

@@ -3,7 +3,7 @@ import {
   cardTiltAnimation,
   hoverToExpandTxt,
   rapidChangeEffect,
-} from "./animation.js";
+} from "./animations/coreAnimations.js";
 import { initializeLocomotiveJS } from "./locomotive.js";
 
 initializeLocomotiveJS();
@@ -26,18 +26,18 @@ popImage(
   { xPercentInitial: -50, gap: 10 }
 );
 
-const sensi = document.body.offsetWidth / 120;
+const sensi = document.body.offsetWidth / 40;
 
 cardTiltAnimation(
   document.querySelector("#himansh-img"),
   document.querySelector("#name-wrapper"),
-  { xSensi: sensi, ySensi: sensi }
+  { xSensi: sensi, ySensi: sensi, addEventListener: true }
 );
 
 cardTiltAnimation(
   document.querySelector("#himansh-desktop"),
   document.querySelector("#desktop-showcase-wrapper"),
-  { xSensi: sensi, ySensi: sensi }
+  { xSensi: sensi, ySensi: sensi, addEventListener: true }
 );
 
 hoverToExpandTxt(
@@ -45,7 +45,7 @@ hoverToExpandTxt(
   document.querySelector("#cs-bold-txt")
 );
 hoverToExpandTxt(
-  document.querySelector("#about-me-section"),
+  document.querySelector("#wmi-container"),
   document.querySelector("#about-me-bold-txt"),
   { expand: 3 }
 );
@@ -55,7 +55,7 @@ rapidChangeEffect(
   document.querySelectorAll(".stars")
 );
 rapidChangeEffect(
-  document.querySelector("#about-me-section"),
+  document.querySelector("#wmi-container"),
   document.querySelectorAll(".question-mark")
 );
 
@@ -63,18 +63,8 @@ rapidChangeEffect(
   document.querySelector("#top-scroll-box"),
   document.querySelectorAll(".up-arrows")
 );
-hoverToExpandTxt(
-  document.querySelector("#top-scroll-box"),
-  document.querySelector("#top-scroll-bold-txt"),
-  { expand: 4 }
-);
 
 rapidChangeEffect(
   document.querySelector("#bottom-scroll-box"),
   document.querySelectorAll(".arrows-down")
-);
-hoverToExpandTxt(
-  document.querySelector("#bottom-scroll-box"),
-  document.querySelector("#bottom-scroll-bold-txt"),
-  { expand: 4 }
 );
