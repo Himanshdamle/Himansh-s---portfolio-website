@@ -35,6 +35,9 @@
       referrerpolicy="no-referrer"
     ></script>
 
+    <!-- ScrollTrigger Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
     <link href="src\output.css" rel="stylesheet" />
     <link href="src\complex.css" rel="stylesheet" />
 
@@ -197,7 +200,7 @@
 
                 <!-- imp -->
                 <div
-                  class="relative w-max text-7xl lg:text-[6vw] font-semibold tracking-wider -mt-3.5 h-20 md:h-[9vw] lg:h-[6vw] flex flex-row gap-0 lg:gap-2.5 2xl:gap-[1.2vw]"
+                  class="relative w-max text-7xl lg:text-[6vw] font-semibold tracking-wider -mt-3.5 h-20 md:h-[9vw] lg:h-[6vw] flex flex-row gap-0 lg:gap-2.5 2xl:gap-[1vw]"
                   id="name-container"
                 >
                   <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
@@ -717,13 +720,13 @@
                 </span>
               </div>
 
-              <div class="h-0.5 bg-white w-full"></div>
+              <div id="seprate-line-abt-sec" class="h-0.5 bg-white w-0"></div>
             </article>
 
             <!--  -->
             <article class="flex flex-row gap-1.5 md:gap-[1vw] items-center">
               <!-- video - Timelapse - coding -->
-              <section class="relative">
+              <section class="opacity-0 blur-2xl scale-125" id="zoom-out-st">
                 <video
                   src="assets/timelapse_coding.mp4"
                   autoplay
@@ -749,9 +752,13 @@
                   <!-- INTRO -->
                   <li>
                     <span>I'm Himansh,</span>
-                    <span class="highlight-kof"
-                      >a self taught frontend web developer</span
-                    >
+                    <span
+                      class="relative overflow-hidden inline-block translate-y-[30%]"
+                      >a self taught frontend web developer
+                      <div
+                        class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
+                      ></div
+                    ></span>
                     <p>
                       who found coding to be more than just a skill – it's my
                       therapy and my future.
@@ -760,16 +767,28 @@
 
                   <!-- JOURNEY -->
                   <li>
-                    <span class="highlight-kof"
-                      >I started my journey in 2024</span
-                    >
-                    <p>
+                    <span
+                      class="relative overflow-hidden inline-block translate-y-[30%]"
+                      >I started my journey in 2024
+                      <div
+                        class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
+                      ></div>
+                    </span>
+
+                    <div>
                       and have been building
-                      <span class="highlight-kof"
-                        >cool, responsive, and clean web stuff</span
+                      <!--  -->
+                      <span
+                        class="relative overflow-hidden inline-block translate-y-[30%]"
                       >
+                        cool, responsive, and clean web stuff
+                        <div
+                          class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
+                        ></div>
+                      </span>
+                      <!--  -->
                       ever since.
-                    </p>
+                    </div>
                   </li>
 
                   <!-- DREAMS -->
@@ -778,9 +797,13 @@
                       When I’m not coding, you’ll probably find me smashing
                       shuttlecocks on the badminton court or
                     </span>
-                    <span class="highlight-kof"
-                      >dreaming about the BMW M8 Coupe.</span
-                    >
+                    <span
+                      class="relative overflow-hidden inline-block translate-y-[30%]"
+                      >dreaming about the BMW M8 Coupe.
+                      <div
+                        class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
+                      ></div>
+                    </span>
                   </li>
                 </ul>
               </section>

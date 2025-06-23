@@ -263,5 +263,50 @@ function textGradientEffect() {
     });
   });
 }
-
 textGradientEffect();
+
+function scrollTriggerAnimation() {
+  const scrollTrigger = {
+    trigger: "#about-me-section",
+    end: "20px 80%",
+    // scrub: true,
+  };
+
+  gsap.to("#seprate-line-abt-sec", {
+    width: "100%",
+    ease: "power2.in",
+    duration: 0.8,
+
+    scrollTrigger,
+    scrollTrigger: {
+      ...scrollTrigger,
+      start: "top center", // [trigger] [scroller] positions
+    },
+  });
+
+  gsap.to(".highlight-animation-st", {
+    x: 0,
+    ease: "power2.in",
+    duration: 0.8,
+
+    scrollTrigger: {
+      ...scrollTrigger,
+      start: "top center-=50",
+    },
+  });
+
+  gsap.to("#zoom-out-st", {
+    opacity: 1,
+    filter: "blur(0px)",
+    scale: 1,
+
+    ease: "power2.out",
+    duration: 0.8,
+
+    scrollTrigger: {
+      ...scrollTrigger,
+      start: "top center-=100",
+    },
+  });
+}
+scrollTriggerAnimation();
