@@ -268,8 +268,8 @@ textGradientEffect();
 function scrollTriggerAnimation() {
   const scrollTrigger = {
     trigger: "#about-me-section",
+    start: "top center",
     end: "20px 80%",
-    // scrub: true,
   };
 
   gsap.to("#seprate-line-abt-sec", {
@@ -278,10 +278,6 @@ function scrollTriggerAnimation() {
     duration: 0.8,
 
     scrollTrigger,
-    scrollTrigger: {
-      ...scrollTrigger,
-      start: "top center", // [trigger] [scroller] positions
-    },
   });
 
   gsap.to(".highlight-animation-st", {
@@ -289,10 +285,7 @@ function scrollTriggerAnimation() {
     ease: "power2.in",
     duration: 0.8,
 
-    scrollTrigger: {
-      ...scrollTrigger,
-      start: "top center-=50",
-    },
+    scrollTrigger,
   });
 
   gsap.to("#zoom-out-st", {
@@ -303,10 +296,7 @@ function scrollTriggerAnimation() {
     ease: "power2.out",
     duration: 0.8,
 
-    scrollTrigger: {
-      ...scrollTrigger,
-      start: "top center-=100",
-    },
+    scrollTrigger,
   });
 }
 scrollTriggerAnimation();

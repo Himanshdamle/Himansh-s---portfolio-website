@@ -2,19 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Three.js Cube Test</title>
-    <style>
-      body {
-        margin: 0;
-        overflow: hidden;
-        background: black;
-      }
-      canvas {
-        display: block;
-      }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Animations</title>
+
+    <!-- https://fonts.google.com/ ---- GOOGLE FONTS CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- INTER -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- KOTTA ONE -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kotta+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/complex.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+      integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="test.js" defer></script>
   </head>
-  <body>
-    <script type="module" src="test.js"></script>
+  <body class="bg-black text-white text-8xl kotta-one-font">
+    <div class="flex flex-row" id="letter-container">
+      <p class="stretch-letter">H</p>
+      <p class="stretch-letter">i</p>
+      <p class="stretch-letter">a</p>
+      <p class="stretch-letter">m</p>
+      <p class="stretch-letter">n</p>
+      <p class="stretch-letter">s</p>
+      <p class="stretch-letter">h</p>
+    </div>
   </body>
 </html>

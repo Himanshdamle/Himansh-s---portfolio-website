@@ -120,3 +120,43 @@ export function rapidChangeEffect(hoveringLayer, multipleImage, intervalTime) {
     clearInterval(intervalId);
   });
 }
+
+export function strechLettersOnHover(letterWrapperId, setting = {}) {
+  const letterWrapper = document.querySelector(`#${letterWrapperId}`);
+
+  const basicMaterial = {
+    transformOrigin: setting.transformOrigin || "top",
+    duration: setting.duration || 0.3,
+    ease: setting.ease || "power2.inOut",
+  };
+
+  letterWrapper.addEventListener(
+    "mouseenter",
+    (e) => {
+      const target = e.target;
+
+      if (target === letterWrapper) return;
+
+      gsap.to(target, {
+        scaleY: setting.streching || 1.3,
+        ...basicMaterial,
+      });
+    },
+    true
+  );
+
+  letterWrapper.addEventListener(
+    "mouseleave",
+    (e) => {
+      const target = e.target;
+
+      if (target === letterWrapper) return;
+
+      gsap.to(target, {
+        scaleY: setting.defaultStrech || 1,
+        ...basicMaterial,
+      });
+    },
+    true
+  );
+}

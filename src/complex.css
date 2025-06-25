@@ -49,9 +49,17 @@ button {
   font-weight: 600;
 }
 
+[data-scroll-container] {
+  will-change: transform;
+}
 .highlight-animation-st {
   will-change: transform;
 }
 .zoom-out-st {
   will-change: opacity, transform, filter;
+}
+
+.stretch-letter,
+body {
+  will-change: transform;
 }

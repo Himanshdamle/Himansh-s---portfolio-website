@@ -3,6 +3,7 @@ import {
   cardTiltAnimation,
   hoverToExpandTxt,
   rapidChangeEffect,
+  strechLettersOnHover,
 } from "./animations/coreAnimations.js";
 import { initializeLocomotiveJS } from "./locomotive.js";
 
@@ -68,3 +69,6 @@ rapidChangeEffect(
   document.querySelector("#bottom-scroll-box"),
   document.querySelectorAll(".arrows-down")
 );
+
+strechLettersOnHover("himansh-letter-container");
+strechLettersOnHover("web-letter-container", { transformOrigin: "bottom" });
