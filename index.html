@@ -43,6 +43,7 @@
 
     <script type="module" src="script.js" defer></script>
     <script type="module" src="animations/nonsharedAnime.js" defer></script>
+    <script type="module" src="action.js"></script>
   </head>
   <body
     class="bg-[#111111] text-white"
@@ -156,42 +157,57 @@
       </a>
     </aside>
 
+    <nav class="fixed py-[2vh] px-[2vw] top-0 z-20 xl-text w-full" id="nav-bar">
+      <section class="flex flex-row justify-between items-center">
+        <div>
+          <a href="index.html" class="flex flex-row gap-[0.5vw] xl-text">
+            <div
+              class="kotta-one-font flex flex-row"
+              id="himansh-letter-container"
+            >
+              <span class="stretch-letter inline-block">H</span>
+              <span class="stretch-letter inline-block">i</span>
+              <span class="stretch-letter inline-block">a</span>
+              <span class="stretch-letter inline-block">m</span>
+              <span class="stretch-letter inline-block">n</span>
+              <span class="stretch-letter inline-block">s</span>
+              <span class="stretch-letter inline-block">h</span>
+            </div>
+            <!--  -->
+            <div class="flex flex-row font-semibold" id="web-letter-container">
+              <span class="stretch-letter inline-block">W</span>
+              <span class="stretch-letter inline-block">e</span>
+              <span class="stretch-letter inline-block">b</span>
+            </div>
+          </a>
+        </div>
+
+        <section class="w-[70%] h-full lg-text">
+          <div>
+            <!-- Full Screen -->
+            <button
+              class="flex flex-row gap-[1vw] items-center"
+              id="full-screen-btn"
+            >
+              <img
+                src="assets/full_screen.svg"
+                alt="full_screen_svg"
+                id="full-screen-svg"
+              />
+
+              <span class="kotta-one-font" id="txt">Full Screen</span>
+            </button>
+          </div>
+        </section>
+      </section>
+    </nav>
+
     <div data-scroll-section>
       <!-- CONTENT -->
       <section
         class="bg-repeat backdrop-blur-[10px] xl-text"
         style="background-image: url('assets/noice.svg')"
       >
-        <nav class="fixed pt-[2vh] px-[2vw]">
-          <section>
-            <div>
-              <a href="index.html" class="flex flex-row">
-                <div
-                  class="kotta-one-font flex flex-row"
-                  id="himansh-letter-container"
-                >
-                  <p class="stretch-letter">H</p>
-                  <p class="stretch-letter">i</p>
-                  <p class="stretch-letter">a</p>
-                  <p class="stretch-letter">m</p>
-                  <p class="stretch-letter">n</p>
-                  <p class="stretch-letter">s</p>
-                  <p class="stretch-letter">h</p>
-                </div>
-                <!--  -->
-                <div
-                  class="flex flex-row font-semibold"
-                  id="web-letter-container"
-                >
-                  <p class="stretch-letter">W</p>
-                  <p class="stretch-letter">e</p>
-                  <p class="stretch-letter">b</p>
-                </div>
-              </a>
-            </div>
-          </section>
-        </nav>
-
         <!--  -->
         <main class="px-[2vw]">
           <section

@@ -160,3 +160,56 @@ export function strechLettersOnHover(letterWrapperId, setting = {}) {
     true
   );
 }
+
+/**
+ * Animates smooth in/out transitions for elements using GSAP.
+ */
+export function smoothInnOutTransition(gsapSettings, play, currentDisplay) {
+  const body = document.body;
+  const bodyOverflow = window.getComputedStyle(body).overflow;
+
+  const animeTarget =
+    gsapSettings.el || document.querySelector(gsapSettings.el);
+
+  console.log(animeTarget);
+
+  if (play) {
+    gsap.set(body, { overflow: "hidden" });
+
+    gsap.to(animeTarget, {
+      filter: `blur(${gsapSettings.blur || 10}px)`,
+      scale: gsapSettings.scale || 1.1,
+      opacity: 0,
+      delay: gsapSettings.delay || 0,
+      duration: gsapSettings.duration || 0.3,
+      ease: gsapSettings.ease || "none",
+      onComplete() {
+        gsap.set(gsapSettings.el, { display: "none" });
+        gsap.set(body, { overflow: bodyOverflow });
+        if (gsapSettings.onCompleteTransition)
+          gsapSettings.onCompleteTransition();
+      },
+    });
+  } else {
+    gsap.set(animeTarget, {
+      display: currentDisplay || "block",
+      filter: `blur(${gsapSettings.blur || 10}px)`,
+      scale: gsapSettings.scale || 1.1,
+    });
+    gsap.set(body, { overflow: "hidden" });
+
+    gsap.to(animeTarget, {
+      filter: "blur(0px)",
+      scale: 1,
+      opacity: gsapSettings.opacity || 1,
+      ease: gsapSettings.ease,
+      duration: gsapSettings.duration,
+      onComplete() {
+        gsap.set(body, { overflow: bodyOverflow });
+
+        if (gsapSettings.onCompleteTransition)
+          gsapSettings.onCompleteTransition();
+      },
+    });
+  }
+}

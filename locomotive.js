@@ -66,7 +66,6 @@ export function initializeLocomotiveJS() {
     const basicMaterial = {
       transformOrigin: "center center",
       duration: 0.4,
-      overwrite: "all",
     };
 
     scroll.on("scroll", () => {
@@ -88,4 +87,27 @@ export function initializeLocomotiveJS() {
     });
   }
   scrollToZoom(scroll);
+
+  function detectUpDownScroll(scroll) {
+    let isScrollDirectionUp = true,
+      timeoutId;
+
+    const navBar = document.querySelector("#nav-bar");
+
+    scroll.on("scroll", (scrollInfo) => {
+      const scrollDirection = scrollInfo.direction;
+
+      // && isScrollDirectionUp to remove the repeatations
+      if (scrollDirection === "down" && isScrollDirectionUp) {
+        gsap.to(navBar, { y: "-100%" });
+
+        isScrollDirectionUp = false;
+      } else if (scrollDirection === "up" && !isScrollDirectionUp) {
+        gsap.to(navBar, { y: 0 });
+
+        isScrollDirectionUp = true;
+      }
+    });
+  }
+  detectUpDownScroll(scroll);
 }

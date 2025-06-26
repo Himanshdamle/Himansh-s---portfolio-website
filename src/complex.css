@@ -23,18 +23,18 @@ button {
 }
 
 .xl-text {
-  font-size: 1.875rem;
+  font-size: 1.875rem !important;
 }
 .lg-text {
-  font-size: 1.6rem;
+  font-size: 1.6rem !important;
 }
 
 @media (min-width: 1024px) {
   .xl-text {
-    font-size: 2.5vw;
+    font-size: 2.5vw !important ;
   }
   .lg-text {
-    font-size: 1.9vw;
+    font-size: 1.9vw !important;
   }
   .highlight-kof {
     font-size: 2.3vw;
