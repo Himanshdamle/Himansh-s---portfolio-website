@@ -89,8 +89,7 @@ export function initializeLocomotiveJS() {
   scrollToZoom(scroll);
 
   function detectUpDownScroll(scroll) {
-    let isScrollDirectionUp = true,
-      timeoutId;
+    let isScrollDirectionUp = true;
 
     const navBar = document.querySelector("#nav-bar");
 

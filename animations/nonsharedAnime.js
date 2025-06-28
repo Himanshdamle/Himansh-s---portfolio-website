@@ -1,4 +1,8 @@
-import { cardTiltAnimation } from "./coreAnimations.js";
+import {
+  cardTiltAnimation,
+  changeCursorShape,
+  addCursorText,
+} from "./coreAnimations.js";
 
 function move3DText() {
   if (document.body.offsetWidth <= 1025) return;
@@ -300,3 +304,61 @@ function scrollTriggerAnimation() {
   });
 }
 scrollTriggerAnimation();
+
+function cursor() {
+  const cursor = document.querySelector("#cursor");
+  const webContainer = document.querySelector("#web-container");
+
+  webContainer.addEventListener("mousemove", (e) => {
+    gsap.to(cursor, {
+      x: e.x - 10,
+      y: e.y - 5,
+      duration: 0.2,
+      ease: "none",
+    });
+  });
+}
+cursor();
+
+function label(elementId = "", label = "") {
+  const element = document.querySelector(`${elementId}`);
+  const cursor = document.querySelector("#cursor");
+  const labelLenght = label.length;
+
+  const boxWidth = labelLenght >= 8 ? labelLenght - 3 : labelLenght;
+
+  element.addEventListener("mouseenter", (e) => {
+    addCursorText(label);
+    changeCursorShape(true, {
+      duration: 0.5,
+      width: `${boxWidth}ch`,
+      height: 30,
+      transformOrigin: "left",
+      ease: "power2.out",
+      onComplete() {
+        const cursorRect = cursor.getBoundingClientRect();
+
+        if (cursorRect.left + cursorRect.width <= innerWidth) return;
+
+        gsap.to(cursor, {
+          x: e.x - cursor.getBoundingClientRect().width,
+          duration: 0.23,
+        });
+      },
+    });
+  });
+
+  element.addEventListener("mouseleave", () => {
+    addCursorText("");
+    changeCursorShape(false, {
+      duration: 0.5,
+    });
+  });
+}
+
+label("#about-me-btn", "About me section");
+label("#project-btn", "Project section");
+label("#top-scroll-box", "Top");
+label("#bottom-scroll-box", "Bottom");
+
+label("#timing-box", "Chattisgrah, Bhilai");

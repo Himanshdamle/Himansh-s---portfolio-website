@@ -1,3 +1,24 @@
+export function changeCursorShape(isEntered, settings = {}) {
+  const cursor = document.querySelector("#cursor");
+  if (isEntered) {
+    gsap.to(cursor, { ...settings });
+  } else {
+    gsap.to(cursor, {
+      borderRadius: 0,
+      scale: 1,
+      width: "2vw",
+      height: "2vw",
+      duration: settings.duration ?? 0.3,
+    });
+  }
+}
+
+export function addCursorText(text) {
+  const cursorText = document.querySelector("#cursor-text");
+
+  cursorText.textContent = text;
+}
+
 export function popImage(idObject = {}, setting = {}) {
   if (document.body.offsetWidth <= 1025) return;
 
@@ -35,6 +56,12 @@ export function popImage(idObject = {}, setting = {}) {
       x: imgWidth,
       duration: 0.4,
     });
+
+    changeCursorShape(true, {
+      scale: 0.5,
+      borderRadius: "50%",
+      duration: 0.25,
+    });
   });
 
   nameWrapper.addEventListener("mouseleave", () => {
@@ -47,6 +74,8 @@ export function popImage(idObject = {}, setting = {}) {
       x: 0,
       duration: 0.4,
     });
+
+    changeCursorShape(false);
   });
 }
 
@@ -121,6 +150,9 @@ export function rapidChangeEffect(hoveringLayer, multipleImage, intervalTime) {
   });
 }
 
+/**
+ * Strech the letters on Hover
+ */
 export function strechLettersOnHover(letterWrapperId, setting = {}) {
   const letterWrapper = document.querySelector(`#${letterWrapperId}`);
 

@@ -50,164 +50,192 @@
     style="font-family: 'Instrument Sans', sans-serif"
     data-scroll-container
   >
-    <!-- CUSTOM SCROLL BAR -->
-    <aside
-      id="custom-scroll-bar-container"
-      class="lg:flex hidden w-max fixed right-0 top-0 h-screen flex-col items-center z-50 xl-text"
+    <div
+      role="presentation"
+      id="cursor"
+      class="bg-white hidden lg:flex w-[2vw] h-[2vw] fixed z-[100] top-0 left-0 pointer-events-none justify-center items-center overflow-hidden"
     >
-      <a
-        href="#landing-page-section"
-        data-scroll-to
-        class="flex flex-row justify-end items-center gap-[0.8vw]"
-        id="top-scroll-box"
+      <p
+        id="cursor-text"
+        class="kotta-one-font font-semibold text-black text-nowrap"
+      ></p>
+    </div>
+
+    <div
+      data-scroll-section
+      id="web-container"
+      role="main"
+      class="cursor-none h-max"
+    >
+      <!-- CUSTOM SCROLL BAR -->
+      <aside
+        id="custom-scroll-bar-container"
+        class="absolute w-max top-0 -translate-y-[1%] right-0 h-screen z-100 xl-text"
+        role="navigation"
+        data-scroll
+        data-scroll-sticky
+        data-scroll-target="#web-container"
       >
-        <!-- UP ARROW -->
-        <div>
-          <!-- 1 -->
-          <img
-            src="assets/arrow_1.svg"
-            alt="arrow"
-            class="up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-          />
-          <!-- 2 -->
-          <img
-            src="assets/arrow_2.svg"
-            alt="arrow"
-            class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-          />
-          <!-- 3 -->
-          <img
-            src="assets/arrow_3.svg"
-            alt="arrow"
-            class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-          />
-          <!-- 4 -->
-          <img
-            src="assets/arrow_4.svg"
-            alt="arrow"
-            class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-          />
-          <!-- 5 -->
-          <img
-            src="assets/arrow_5.svg"
-            alt="arrow"
-            class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-          />
-        </div>
-      </a>
-
-      <!-- BARS -->
-      <main class="h-full w-[1vw] flex flex-col gap-[0.8vh]">
-        <a
-          data-scroll-to
-          href="#about-me-section"
-          class="w-full h-[30%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
-        ></a>
-        <!--  -->
-        <a
-          href="#"
-          class="w-full h-[30%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
-        ></a>
-        <!--  -->
-        <a
-          href="#"
-          class="w-full h-[40%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
-        ></a>
-      </main>
-
-      <!--  -->
-      <a
-        href="#landing-page-section"
-        class="flex flex-row justify-end items-center gap-[0.8vw]"
-        id="bottom-scroll-box"
-      >
-        <!-- DOWN ARROW -->
-        <div>
-          <!-- 1 -->
-          <img
-            src="assets/arrow_1.svg"
-            alt="arrow"
-            class="arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-          />
-          <!-- 2 -->
-          <img
-            src="assets/arrow_2.svg"
-            alt="arrow"
-            class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-          />
-          <!-- 3 -->
-          <img
-            src="assets/arrow_3.svg"
-            alt="arrow"
-            class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-          />
-          <!-- 4 -->
-          <img
-            src="assets/arrow_4.svg"
-            alt="arrow"
-            class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-          />
-          <!-- 5 -->
-          <img
-            src="assets/arrow_5.svg"
-            alt="arrow"
-            class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-          />
-        </div>
-      </a>
-    </aside>
-
-    <nav class="fixed py-[2vh] px-[2vw] top-0 z-20 xl-text w-full" id="nav-bar">
-      <section class="flex flex-row justify-between items-center">
-        <div>
-          <a href="index.html" class="flex flex-row gap-[0.5vw] xl-text">
-            <div
-              class="kotta-one-font flex flex-row"
-              id="himansh-letter-container"
-            >
-              <span class="stretch-letter inline-block">H</span>
-              <span class="stretch-letter inline-block">i</span>
-              <span class="stretch-letter inline-block">a</span>
-              <span class="stretch-letter inline-block">m</span>
-              <span class="stretch-letter inline-block">n</span>
-              <span class="stretch-letter inline-block">s</span>
-              <span class="stretch-letter inline-block">h</span>
+        <div class="h-full w-full flex flex-col items-center">
+          <a
+            href="#landing-page-section"
+            data-scroll-to
+            class="flex flex-row justify-end items-center gap-[0.8vw]"
+            id="top-scroll-box"
+            role="button"
+          >
+            <!-- UP ARROW -->
+            <div>
+              <!-- 1 -->
+              <img
+                src="assets/arrow_1.svg"
+                alt="arrow"
+                class="up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+              />
+              <!-- 2 -->
+              <img
+                src="assets/arrow_2.svg"
+                alt="arrow"
+                class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+              />
+              <!-- 3 -->
+              <img
+                src="assets/arrow_3.svg"
+                alt="arrow"
+                class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+              />
+              <!-- 4 -->
+              <img
+                src="assets/arrow_4.svg"
+                alt="arrow"
+                class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+              />
+              <!-- 5 -->
+              <img
+                src="assets/arrow_5.svg"
+                alt="arrow"
+                class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+              />
             </div>
+          </a>
+
+          <!-- BARS -->
+          <main class="h-full w-[1vw] flex flex-col gap-[0.8vh]">
+            <a
+              role="button"
+              href="#about-me-section"
+              id="about-me-btn"
+              class="w-full h-[50%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
+            ></a>
             <!--  -->
-            <div class="flex flex-row font-semibold" id="web-letter-container">
-              <span class="stretch-letter inline-block">W</span>
-              <span class="stretch-letter inline-block">e</span>
-              <span class="stretch-letter inline-block">b</span>
+            <a
+              href="#"
+              role="button"
+              id="project-btn"
+              class="w-full h-[50%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
+            ></a>
+          </main>
+
+          <!--  -->
+          <a
+            href="#landing-page-section"
+            role="button"
+            class="flex flex-row justify-end items-center gap-[0.8vw]"
+            id="bottom-scroll-box"
+          >
+            <!-- DOWN ARROW -->
+            <div>
+              <!-- 1 -->
+              <img
+                src="assets/arrow_1.svg"
+                alt="arrow"
+                class="arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+              />
+              <!-- 2 -->
+              <img
+                src="assets/arrow_2.svg"
+                alt="arrow"
+                class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+              />
+              <!-- 3 -->
+              <img
+                src="assets/arrow_3.svg"
+                alt="arrow"
+                class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+              />
+              <!-- 4 -->
+              <img
+                src="assets/arrow_4.svg"
+                alt="arrow"
+                class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+              />
+              <!-- 5 -->
+              <img
+                src="assets/arrow_5.svg"
+                alt="arrow"
+                class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+              />
             </div>
           </a>
         </div>
+      </aside>
 
-        <section class="w-[70%] h-full lg-text">
-          <div>
-            <!-- Full Screen -->
-            <button
-              class="flex flex-row gap-[1vw] items-center"
-              id="full-screen-btn"
-            >
-              <img
-                src="assets/full_screen.svg"
-                alt="full_screen_svg"
-                id="full-screen-svg"
-              />
-
-              <span class="kotta-one-font" id="txt">Full Screen</span>
-            </button>
-          </div>
-        </section>
-      </section>
-    </nav>
-
-    <div data-scroll-section>
       <!-- CONTENT -->
       <section
-        class="bg-repeat backdrop-blur-[10px] xl-text"
+        class="bg-repeat backdrop-blur-[10px] xl-text relative"
         style="background-image: url('assets/noice.svg')"
       >
+        <nav
+          class="fixed py-[2vh] px-[2vw] top-0 z-1 xl-text w-full"
+          id="nav-bar"
+        >
+          <section class="flex flex-row justify-between items-center">
+            <div>
+              <a href="index.html" class="flex flex-row gap-[0.5vw] xl-text">
+                <div
+                  class="kotta-one-font flex flex-row"
+                  id="himansh-letter-container"
+                >
+                  <span class="stretch-letter inline-block">H</span>
+                  <span class="stretch-letter inline-block">i</span>
+                  <span class="stretch-letter inline-block">a</span>
+                  <span class="stretch-letter inline-block">m</span>
+                  <span class="stretch-letter inline-block">n</span>
+                  <span class="stretch-letter inline-block">s</span>
+                  <span class="stretch-letter inline-block">h</span>
+                </div>
+                <!--  -->
+                <div
+                  class="flex flex-row font-semibold"
+                  id="web-letter-container"
+                >
+                  <span class="stretch-letter inline-block">W</span>
+                  <span class="stretch-letter inline-block">e</span>
+                  <span class="stretch-letter inline-block">b</span>
+                </div>
+              </a>
+            </div>
+
+            <section class="w-[70%] h-full lg-text">
+              <div>
+                <!-- Full Screen -->
+                <button
+                  class="flex flex-row gap-[1vw] items-center"
+                  id="full-screen-btn"
+                >
+                  <img
+                    src="assets/full_screen.svg"
+                    alt="full_screen_svg"
+                    id="full-screen-svg"
+                  />
+
+                  <span class="kotta-one-font" id="txt">Full Screen</span>
+                </button>
+              </div>
+            </section>
+          </section>
+        </nav>
+
         <!--  -->
         <main class="px-[2vw]">
           <section
@@ -512,6 +540,9 @@
                 <!-- MARQUEE CONTENT -->
                 <div
                   class="flex flex-row items-center gap-[5vw] w-max py-[3vh]"
+                  data-scroll
+                  data-scroll-direction="horizontal"
+                  data-scroll-speed="8"
                 >
                   <article
                     class="flex flex-row gap-15 md:gap-[5vw] w-max h-full animate-marquee"
@@ -790,7 +821,7 @@
                   <li>
                     <span>I'm Himansh,</span>
                     <span
-                      class="relative overflow-hidden inline-block translate-y-[20%]"
+                      class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
                       >a self taught frontend web developer
                       <div
                         class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
@@ -805,7 +836,7 @@
                   <!-- JOURNEY -->
                   <li>
                     <span
-                      class="relative overflow-hidden inline-block translate-y-[20%]"
+                      class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
                       >I started my journey in 2024
                       <div
                         class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
@@ -816,7 +847,7 @@
                       and have been building
                       <!--  -->
                       <span
-                        class="relative overflow-hidden inline-block translate-y-[20%]"
+                        class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
                       >
                         cool, responsive, and clean web stuff
                         <div
@@ -835,7 +866,7 @@
                       shuttlecocks on the badminton court or
                     </span>
                     <span
-                      class="relative overflow-hidden inline-block translate-y-[20%]"
+                      class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
                       >dreaming about the BMW M8 Coupe.
                       <div
                         class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
