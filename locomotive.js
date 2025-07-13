@@ -54,7 +54,6 @@ export function initializeLocomotiveJS() {
     ScrollTrigger.addEventListener("refresh", () => scroll.update());
     ScrollTrigger.refresh();
   }
-
   connectLocoToGsapScroll();
 
   function scrollToZoom(scroll) {

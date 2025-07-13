@@ -1,3 +1,8 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*  */
 .c-scrollbar {
   display: none !important;
 }
@@ -60,6 +65,9 @@ button {
 }
 
 .stretch-letter,
-body {
+#cursor body {
   will-change: transform;
+}
+#cursor {
+  will-change: width;
 }

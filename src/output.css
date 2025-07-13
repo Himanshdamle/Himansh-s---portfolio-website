@@ -10,6 +10,10 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
     --text-4xl: 2.25rem;
     --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
@@ -298,14 +302,8 @@
   .h-\[2vw\] {
     height: 2vw;
   }
-  .h-\[30\%\] {
-    height: 30%;
-  }
   .h-\[50\%\] {
     height: 50%;
-  }
-  .h-\[70\%\] {
-    height: 70%;
   }
   .h-\[72px\] {
     height: 72px;
@@ -346,6 +344,15 @@
   .w-\[2vw\] {
     width: 2vw;
   }
+  .w-\[10vw\] {
+    width: 10vw;
+  }
+  .w-\[30vw\] {
+    width: 30vw;
+  }
+  .w-\[50vw\] {
+    width: 50vw;
+  }
   .w-\[70\%\] {
     width: 70%;
   }
@@ -354,6 +361,15 @@
   }
   .w-max {
     width: max-content;
+  }
+  .flex-\[1\] {
+    flex: 1;
+  }
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .grow {
+    flex-grow: 1;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -427,9 +443,6 @@
   }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
-  }
-  .cursor-none {
-    cursor: none;
   }
   .cursor-text {
     cursor: text;
@@ -505,6 +518,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .overflow-x-hidden {
+    overflow-x: hidden;
   }
   .rounded-\[0\.2vw\] {
     border-radius: 0.2vw;
@@ -603,6 +619,14 @@
   .text-8xl {
     font-size: var(--text-8xl);
     line-height: var(--tw-leading, var(--text-8xl--line-height));
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
   }
   .leading-tight {
     --tw-leading: var(--leading-tight);
@@ -871,6 +895,11 @@
       translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
+  .lg\:cursor-none {
+    @media (width >= 64rem) {
+      cursor: none;
+    }
+  }
   .lg\:gap-2\.5 {
     @media (width >= 64rem) {
       gap: calc(var(--spacing) * 2.5);
@@ -904,6 +933,16 @@
   .\32 xl\:gap-\[1vw\] {
     @media (width >= 96rem) {
       gap: 1vw;
+    }
+  }
+  .\32 xl\:text-\[1vw\] {
+    @media (width >= 96rem) {
+      font-size: 1vw;
+    }
+  }
+  .\32 xl\:text-\[1vws\] {
+    @media (width >= 96rem) {
+      color: 1vws;
     }
   }
 }

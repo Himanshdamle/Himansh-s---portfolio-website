@@ -46,14 +46,14 @@
     <script type="module" src="action.js"></script>
   </head>
   <body
-    class="bg-[#111111] text-white"
+    class="bg-[#111111] text-white overflow-x-hidden"
     style="font-family: 'Instrument Sans', sans-serif"
     data-scroll-container
   >
     <div
       role="presentation"
       id="cursor"
-      class="bg-white hidden lg:flex w-[2vw] h-[2vw] fixed z-[100] top-0 left-0 pointer-events-none justify-center items-center overflow-hidden"
+      class="bg-white text-sm 2xl:text-[1vw] hidden lg:flex w-[2vw] h-[2vw] fixed z-[100] top-0 left-0 pointer-events-none justify-center items-center overflow-hidden"
     >
       <p
         id="cursor-text"
@@ -61,16 +61,63 @@
       ></p>
     </div>
 
+    <nav class="fixed py-[2vh] px-[2vw] top-0 z-1 xl-text w-full" id="nav-bar">
+      <section class="flex flex-row justify-between items-center">
+        <div>
+          <a href="index.html" class="flex flex-row gap-[0.5vw] xl-text">
+            <div
+              class="kotta-one-font flex flex-row"
+              id="himansh-letter-container"
+            >
+              <span class="stretch-letter inline-block">H</span>
+              <span class="stretch-letter inline-block">i</span>
+              <span class="stretch-letter inline-block">a</span>
+              <span class="stretch-letter inline-block">m</span>
+              <span class="stretch-letter inline-block">n</span>
+              <span class="stretch-letter inline-block">s</span>
+              <span class="stretch-letter inline-block">h</span>
+            </div>
+            <!--  -->
+            <div class="flex flex-row font-semibold" id="web-letter-container">
+              <span class="stretch-letter inline-block">W</span>
+              <span class="stretch-letter inline-block">e</span>
+              <span class="stretch-letter inline-block">b</span>
+            </div>
+          </a>
+        </div>
+
+        <section class="w-[70%] h-full lg-text">
+          <div>
+            <!-- Full Screen -->
+            <button
+              class="flex flex-row gap-[1vw] items-center"
+              id="full-screen-btn"
+            >
+              <div class="flex-[1] w-full h-full">
+                <img
+                  src="assets/full_screen.svg"
+                  alt="full_screen_svg"
+                  id="full-screen-svg"
+                  class="h-full w-full"
+                />
+              </div>
+              <span class="kotta-one-font" id="txt">Full Screen</span>
+            </button>
+          </div>
+        </section>
+      </section>
+    </nav>
+
     <div
       data-scroll-section
       id="web-container"
       role="main"
-      class="cursor-none h-max"
+      class="lg:cursor-none h-max relative"
     >
       <!-- CUSTOM SCROLL BAR -->
       <aside
         id="custom-scroll-bar-container"
-        class="absolute w-max top-0 -translate-y-[1%] right-0 h-screen z-100 xl-text"
+        class="fixed w-max top-0 -translate-y-[1%] right-0 h-screen z-100 xl-text"
         role="navigation"
         data-scroll
         data-scroll-sticky
@@ -185,59 +232,9 @@
         class="bg-repeat backdrop-blur-[10px] xl-text relative"
         style="background-image: url('assets/noice.svg')"
       >
-        <nav
-          class="fixed py-[2vh] px-[2vw] top-0 z-1 xl-text w-full"
-          id="nav-bar"
-        >
-          <section class="flex flex-row justify-between items-center">
-            <div>
-              <a href="index.html" class="flex flex-row gap-[0.5vw] xl-text">
-                <div
-                  class="kotta-one-font flex flex-row"
-                  id="himansh-letter-container"
-                >
-                  <span class="stretch-letter inline-block">H</span>
-                  <span class="stretch-letter inline-block">i</span>
-                  <span class="stretch-letter inline-block">a</span>
-                  <span class="stretch-letter inline-block">m</span>
-                  <span class="stretch-letter inline-block">n</span>
-                  <span class="stretch-letter inline-block">s</span>
-                  <span class="stretch-letter inline-block">h</span>
-                </div>
-                <!--  -->
-                <div
-                  class="flex flex-row font-semibold"
-                  id="web-letter-container"
-                >
-                  <span class="stretch-letter inline-block">W</span>
-                  <span class="stretch-letter inline-block">e</span>
-                  <span class="stretch-letter inline-block">b</span>
-                </div>
-              </a>
-            </div>
-
-            <section class="w-[70%] h-full lg-text">
-              <div>
-                <!-- Full Screen -->
-                <button
-                  class="flex flex-row gap-[1vw] items-center"
-                  id="full-screen-btn"
-                >
-                  <img
-                    src="assets/full_screen.svg"
-                    alt="full_screen_svg"
-                    id="full-screen-svg"
-                  />
-
-                  <span class="kotta-one-font" id="txt">Full Screen</span>
-                </button>
-              </div>
-            </section>
-          </section>
-        </nav>
-
         <!--  -->
         <main class="px-[2vw]">
+          <!-- HERO SECTION -->
           <section
             id="landing-page-section"
             class="h-screen flex flex-col justify-center items-center gap-7 sm:gap-[4vh]"
@@ -251,13 +248,7 @@
               >
                 <div class="tracking-wide">
                   <h3 class="flex flex-row">
-                    <div id="word" class="flex flex-row">
-                      <span>H</span>
-                      <span>e</span>
-                      <span>l</span>
-                      <span>l</span>
-                      <span>o</span>
-                    </div>
+                    <div id="word" class="flex flex-row">Hello</div>
                     <div id="comma" class="block">,</div>
                     I am
                   </h3>
@@ -279,12 +270,12 @@
                       class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[5%] translate-x-[-1%] move-txt-grp1"
                     >
                       <div class="ia-grp-box-1">
-                        <h1 class="text-[#595959]">Him</h1>
-                        <h1 class="text-[#595959]">Him</h1>
+                        <span class="text-[#595959] block">Him</span>
+                        <span class="text-[#595959] block">Him</span>
                       </div>
                       <div class="ia-grp-box-1">
-                        <h1 class="text-[#595959]">Him</h1>
-                        <h1 class="text-[#595959]">Him</h1>
+                        <span class="text-[#595959] block">Him</span>
+                        <span class="text-[#595959] block">Him</span>
                       </div>
                     </article>
                     <!--  -->
@@ -292,12 +283,12 @@
                       class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-90%] translate-x-[1%] move-txt-grp1"
                     >
                       <div class="ia-grp-box-2">
-                        <h1 class="text-[#aeaeae]">Him</h1>
-                        <h1 class="text-[#aeaeae]">Him</h1>
+                        <span class="text-[#aeaeae] block">Him</span>
+                        <span class="text-[#aeaeae] block">Him</span>
                       </div>
                       <div class="ia-grp-box-2">
-                        <h1 class="text-[#aeaeae]">Him</h1>
-                        <h1 class="text-[#aeaeae]">Him</h1>
+                        <span class="text-[#aeaeae] block">Him</span>
+                        <span class="text-[#aeaeae] block">Him</span>
                       </div>
                     </article>
                     <!--  -->
@@ -305,12 +296,12 @@
                       class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-185%] translate-x-[3%] move-txt-grp1"
                     >
                       <div class="ia-grp-box-3">
-                        <h1 class="text-[#ffffff]">Him</h1>
-                        <h1 class="text-[#ffffff]">Him</h1>
+                        <span class="text-[#ffffff] block">Him</span>
+                        <span class="text-[#ffffff] block">Him</span>
                       </div>
                       <div class="ia-grp-box-3">
-                        <h1 class="text-[#ffffff]">Him</h1>
-                        <h1 class="text-[#ffffff]">Him</h1>
+                        <span class="text-[#ffffff] block">Him</span>
+                        <span class="text-[#ffffff] block">Him</span>
                       </div>
                     </article>
                   </section>
@@ -338,42 +329,46 @@
                     id="img-right-side-box"
                     class="name-sections translate-x-[-3%]"
                   >
+                    <!-- Layer 1 -->
                     <article
                       class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[5%] translate-x-[-1%] move-txt-grp2"
                     >
+                      <!-- ia == intro-animation -->
                       <div class="ia-grp-box-1">
-                        <h1 class="text-[#595959]">ansh</h1>
-                        <h1 class="text-[#595959]">ansh</h1>
+                        <span class="text-[#595959] block">ansh</span>
+                        <span class="text-[#595959] block">ansh</span>
                       </div>
                       <div class="ia-grp-box-1">
-                        <h1 class="text-[#595959]">ansh</h1>
-                        <h1 class="text-[#595959]">ansh</h1>
+                        <span class="text-[#595959] block">ansh</span>
+                        <span class="text-[#595959] block">ansh</span>
                       </div>
                     </article>
-                    <!--  -->
+
+                    <!-- Layer 2 -->
                     <article
                       class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-90%] translate-x-[1%] move-txt-grp2"
                     >
                       <div class="ia-grp-box-2">
-                        <h1 class="text-[#aeaeae]">ansh</h1>
-                        <h1 class="text-[#aeaeae]">ansh</h1>
+                        <span class="text-[#aeaeae] block">ansh</span>
+                        <span class="text-[#aeaeae] block">ansh</span>
                       </div>
                       <div class="ia-grp-box-2">
-                        <h1 class="text-[#aeaeae]">ansh</h1>
-                        <h1 class="text-[#aeaeae]">ansh</h1>
+                        <span class="text-[#aeaeae] block">ansh</span>
+                        <span class="text-[#aeaeae] block">ansh</span>
                       </div>
                     </article>
-                    <!--  -->
+
+                    <!-- Layer 3 -->
                     <article
                       class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-185%] translate-x-[3%] move-txt-grp2"
                     >
                       <div class="ia-grp-box-3">
-                        <h1 class="text-[#ffffff]">ansh</h1>
-                        <h1 class="text-[#ffffff]">ansh</h1>
+                        <span class="text-[#ffffff] block">ansh</span>
+                        <span class="text-[#ffffff] block">ansh</span>
                       </div>
                       <div class="ia-grp-box-3">
-                        <h1 class="text-[#ffffff]">ansh</h1>
-                        <h1 class="text-[#ffffff]">ansh</h1>
+                        <span class="text-[#ffffff] block">ansh</span>
+                        <span class="text-[#ffffff] block">ansh</span>
                       </div>
                     </article>
                   </section>
@@ -488,44 +483,61 @@
                 </article>
 
                 <!-- STAR -->
-                <article>
+                <ul>
                   <!-- 1 -->
-                  <img
-                    src="assets/star_1.svg"
-                    alt="star"
-                    class="stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
+                  <li>
+                    <img
+                      src="assets/star_1.svg"
+                      alt="star"
+                      class="stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
+
                   <!-- 2 -->
-                  <img
-                    src="assets/star_2.svg"
-                    alt="star"
-                    class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
+                  <li>
+                    <img
+                      src="assets/star_2.svg"
+                      alt="star"
+                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
+
                   <!-- 3 -->
-                  <img
-                    src="assets/star_3.svg"
-                    alt="star"
-                    class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
+                  <li>
+                    <img
+                      src="assets/star_3.svg"
+                      alt="star"
+                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
+
                   <!-- 4 -->
-                  <img
-                    src="assets/star_4.svg"
-                    alt="star"
-                    class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
+                  <li>
+                    <img
+                      src="assets/star_4.svg"
+                      alt="star"
+                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
+
                   <!-- 5 -->
-                  <img
-                    src="assets/star_5.svg"
-                    alt="star"
-                    class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
+                  <li>
+                    <img
+                      src="assets/star_5.svg"
+                      alt="star"
+                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
+
                   <!-- 6 -->
-                  <img
-                    src="assets/star_6.svg"
-                    alt="star"
-                    class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
-                </article>
+                  <li>
+                    <img
+                      src="assets/star_6.svg"
+                      alt="star"
+                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
+                </ul>
               </section>
 
               <section
@@ -544,183 +556,197 @@
                   data-scroll-direction="horizontal"
                   data-scroll-speed="8"
                 >
-                  <article
+                  <ol
                     class="flex flex-row gap-15 md:gap-[5vw] w-max h-full animate-marquee"
                   >
-                    <div
-                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
-                      data-bg-color="#BF4322"
-                    >
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                        src="assets/HTML-logo.webp"
-                        alt="HTML-logo"
-                      />
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                        src="assets/HTML-logo.webp"
-                        alt="HTML-logo"
-                      />
-                      <p>HTML</p>
-                      <sup
-                        class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                        >1</sup
-                      >
-                    </div>
-                    <!--  -->
-                    <div
-                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
-                      data-bg-color="#15C2B8"
-                    >
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                        src="assets/tailwind-css-image.png"
-                        alt="tw-logo"
-                      />
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                        src="assets/tailwind-css-image.png"
-                        alt="tw-logo"
-                      />
+                    <!-- HTML -->
+                    <li class="marquee-content" data-bg-color="#BF4322">
+                      <div class="flex flex-row gap-[1vw] items-center">
+                        <div class="relative card-tilt-anime">
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                            src="assets/HTML-logo.webp"
+                            alt="HTML-logo"
+                          />
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                            src="assets/HTML-logo.webp"
+                            alt="HTML-logo"
+                          />
+                        </div>
+                        <span>HTML</span>
+                        <sup
+                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                          >1</sup
+                        >
+                      </div>
+                    </li>
 
-                      <p>Tailwind CSS</p>
-                      <sup
-                        class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                        >2</sup
-                      >
-                    </div>
-                    <!--  -->
-                    <div
-                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
-                      data-bg-color="#F0DB4F"
-                    >
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                        src="assets/JavaScript-logo.png"
-                        alt="tw-logo"
-                      />
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                        src="assets/JavaScript-logo.png"
-                        alt="JavaScript-logo"
-                      />
-                      <p>JavaScript</p>
-                      <sup
-                        class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                        >3</sup
-                      >
-                    </div>
-                    <!--  -->
-                    <div
-                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
-                      data-bg-color="#0BE348"
-                    >
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                        src="assets/GSAP-logo.avif"
-                        alt="tw-logo"
-                      />
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                        src="assets/GSAP-logo.avif"
-                        alt="GSAP-logo"
-                      />
-                      <p>GSAP</p>
-                      <sup
-                        class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                        >4</sup
-                      >
-                    </div>
-                  </article>
+                    <!-- Tailwind CSS -->
+                    <li class="marquee-content" data-bg-color="#15C2B8">
+                      <div class="flex flex-row gap-[1vw] items-center">
+                        <div class="relative card-tilt-anime">
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                            src="assets/tailwind-css-image.png"
+                            alt="Tailwind-logo"
+                          />
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                            src="assets/tailwind-css-image.png"
+                            alt="Tailwind-logo"
+                          />
+                        </div>
+                        <span>Tailwind CSS</span>
+                        <sup
+                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                          >2</sup
+                        >
+                      </div>
+                    </li>
+
+                    <!-- JavaScript -->
+                    <li class="marquee-content" data-bg-color="#F0DB4F">
+                      <div class="flex flex-row gap-[1vw] items-center">
+                        <div class="relative card-tilt-anime">
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                            src="assets/JavaScript-logo.png"
+                            alt="JavaScript-logo"
+                          />
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                            src="assets/JavaScript-logo.png"
+                            alt="JavaScript-logo"
+                          />
+                        </div>
+                        <span>JavaScript</span>
+                        <sup
+                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                          >3</sup
+                        >
+                      </div>
+                    </li>
+
+                    <!-- GSAP -->
+                    <li class="marquee-content" data-bg-color="#0BE348">
+                      <div class="flex flex-row gap-[1vw] items-center">
+                        <div class="relative card-tilt-anime">
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                            src="assets/GSAP-logo.avif"
+                            alt="GSAP-logo"
+                          />
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                            src="assets/GSAP-logo.avif"
+                            alt="GSAP-logo"
+                          />
+                        </div>
+                        <span>GSAP</span>
+                        <sup
+                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                          >4</sup
+                        >
+                      </div>
+                    </li>
+                  </ol>
 
                   <!--  -->
-                  <article
+                  <ol
                     class="flex flex-row gap-15 md:gap-[5vw] w-max animate-marquee"
                   >
-                    <div
-                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
-                      data-bg-color="#BF4322"
-                    >
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                        src="assets/HTML-logo.webp"
-                        alt="HTML-logo"
-                      />
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                        src="assets/HTML-logo.webp"
-                        alt="HTML-logo"
-                      />
-                      <p>HTML</p>
-                      <sup
-                        class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                        >1</sup
-                      >
-                    </div>
-                    <!--  -->
-                    <div
-                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
-                      data-bg-color="#15C2B8"
-                    >
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                        src="assets/tailwind-css-image.png"
-                        alt="tw-logo"
-                      />
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                        src="assets/tailwind-css-image.png"
-                        alt="tw-logo"
-                      />
-                      <p>Tailwind CSS</p>
-                      <sup
-                        class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                        >2</sup
-                      >
-                    </div>
-                    <!--  -->
-                    <div
-                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
-                      data-bg-color="#F0DB4F"
-                    >
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                        src="assets/JavaScript-logo.png"
-                        alt="tw-logo"
-                      />
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                        src="assets/JavaScript-logo.png"
-                        alt="JavaScript-logo"
-                      />
-                      <p>JavaScript</p>
-                      <sup
-                        class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                        >3</sup
-                      >
-                    </div>
-                    <!--  -->
-                    <div
-                      class="relative flex flex-row gap-[1vw] items-center marquee-content"
-                      data-bg-color="#0BE348"
-                    >
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                        src="assets/GSAP-logo.avif"
-                        alt="tw-logo"
-                      />
-                      <img
-                        class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                        src="assets/GSAP-logo.avif"
-                        alt="GSAP-logo"
-                      />
-                      <p>GSAP</p>
-                      <sup
-                        class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                        >4</sup
-                      >
-                    </div>
-                  </article>
+                    <li class="marquee-content" data-bg-color="#BF4322">
+                      <div class="flex flex-row gap-[1vw] items-center">
+                        <div class="relative card-tilt-anime">
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                            src="assets/HTML-logo.webp"
+                            alt="HTML-logo"
+                          />
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                            src="assets/HTML-logo.webp"
+                            alt="HTML-logo"
+                          />
+                        </div>
+                        <span>HTML</span>
+                        <sup
+                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                          >1</sup
+                        >
+                      </div>
+                    </li>
+
+                    <!-- Tailwind CSS -->
+                    <li class="marquee-content" data-bg-color="#15C2B8">
+                      <div class="flex flex-row gap-[1vw] items-center">
+                        <div class="relative card-tilt-anime">
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                            src="assets/tailwind-css-image.png"
+                            alt="Tailwind-logo"
+                          />
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                            src="assets/tailwind-css-image.png"
+                            alt="Tailwind-logo"
+                          />
+                        </div>
+                        <span>Tailwind CSS</span>
+                        <sup
+                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                          >2</sup
+                        >
+                      </div>
+                    </li>
+
+                    <!-- JavaScript -->
+                    <li class="marquee-content" data-bg-color="#F0DB4F">
+                      <div class="flex flex-row gap-[1vw] items-center">
+                        <div class="relative card-tilt-anime">
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                            src="assets/JavaScript-logo.png"
+                            alt="JavaScript-logo"
+                          />
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                            src="assets/JavaScript-logo.png"
+                            alt="JavaScript-logo"
+                          />
+                        </div>
+                        <span>JavaScript</span>
+                        <sup
+                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                          >3</sup
+                        >
+                      </div>
+                    </li>
+
+                    <!-- GSAP -->
+                    <li class="marquee-content" data-bg-color="#0BE348">
+                      <div class="flex flex-row gap-[1vw] items-center">
+                        <div class="relative card-tilt-anime">
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                            src="assets/GSAP-logo.avif"
+                            alt="GSAP-logo"
+                          />
+                          <img
+                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                            src="assets/GSAP-logo.avif"
+                            alt="GSAP-logo"
+                          />
+                        </div>
+                        <span>GSAP</span>
+                        <sup
+                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                          >4</sup
+                        >
+                      </div>
+                    </li>
+                  </ol>
                 </div>
 
                 <!-- Right fade -->
@@ -731,6 +757,7 @@
             </div>
           </section>
 
+          <!-- WHO AM I? -->
           <section
             id="about-me-section"
             class="w-full flex flex-col gap-1.5 md:gap-[1vw]"
@@ -740,52 +767,62 @@
             >
               <div class="flex flex-row w-max" id="wmi-container">
                 <span class="h-7 md:h-[3vw] inline-block">
-                  <p
+                  <div
                     class="font-semibold text-transparent"
                     style="-webkit-text-stroke: 1px white; color: transparent"
                   >
                     Who am i
-                  </p>
-                  <p
+                  </div>
+                  <div
                     class="font-semibold translate-y-[-100%]"
                     id="about-me-bold-txt"
                   >
                     Who am i
-                  </p>
+                  </div>
                 </span>
 
-                <span>
+                <ul class="flex justify-center items-center">
                   <!-- 1 -->
-                  <img
-                    src="assets/qm_1.svg"
-                    alt="qm"
-                    class="question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
+                  <li>
+                    <img
+                      src="assets/qm_1.svg"
+                      alt="question mark"
+                      class="question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
                   <!-- 2 -->
-                  <img
-                    src="assets/qm_2.svg"
-                    alt="qm"
-                    class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
+                  <li>
+                    <img
+                      src="assets/qm_2.svg"
+                      alt="question mark"
+                      class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
                   <!-- 3 -->
-                  <img
-                    src="assets/qm_3.svg"
-                    alt="qm"
-                    class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
+                  <li>
+                    <img
+                      src="assets/qm_3.svg"
+                      alt="question mark"
+                      class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
                   <!-- 4 -->
-                  <img
-                    src="assets/qm_4.svg"
-                    alt="qm"
-                    class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
+                  <li>
+                    <img
+                      src="assets/qm_4.svg"
+                      alt="question mark"
+                      class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
                   <!-- 5 -->
-                  <img
-                    src="assets/qm_5.svg"
-                    alt="qm"
-                    class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                  />
-                </span>
+                  <li>
+                    <img
+                      src="assets/qm_5.svg"
+                      alt="question mark"
+                      class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                    />
+                  </li>
+                </ul>
               </div>
 
               <div id="seprate-line-abt-sec" class="h-0.5 bg-white w-0"></div>
@@ -794,22 +831,27 @@
             <!--  -->
             <article class="flex flex-row gap-1.5 md:gap-[1vw] items-center">
               <!-- video - Timelapse - coding -->
-              <section class="opacity-0 blur-2xl scale-120" id="zoom-out-st">
+              <section
+                class="opacity-0 blur-2xl scale-120 grow"
+                id="zoom-out-st"
+              >
+                <!-- blured bg vid -->
                 <video
                   src="assets/timelapse_coding.mp4"
                   autoplay
                   muted
                   loop
                   playsinline
-                  class="hidden lg:block md:w-full md:h-max rounded-xl blur-xl absolute top-0 -z-1"
+                  class="hidden lg:block w-[50vw] h-max rounded-xl blur-xl absolute top-0 -z-1"
                 ></video>
+                <!-- actual vid -->
                 <video
                   src="assets/timelapse_coding.mp4"
                   autoplay
                   muted
                   loop
                   playsinline
-                  class="hidden lg:block md:w-full md:h-max rounded-xl"
+                  class="hidden lg:block w-[50vw] h-max rounded-xl"
                 ></video>
               </section>
 

@@ -13,14 +13,14 @@ function move3DText() {
   const grp2Txt = document.querySelectorAll(".move-txt-grp2");
 
   function directionX(axis, index) {
-    if (axis >= 50) {
-      return `${5 + (index - 3) * 2}%`;
-    } else return `${5 - index * 2}%`;
+    // (direction shift value) + {- for -xAxis direction} (index) * gap b/w letters
+
+    if (axis >= 50) return `${5 + index * 2}%`;
+    else return `${5 - index * 2}%`;
   }
   function directionY(axis, index) {
-    if (axis >= 50) {
-      return `${5 - index * 95}%`;
-    } else return `-${index * 105}%`;
+    if (axis >= 50) return `${5 - index * 95}%`;
+    else return `-${index * 105}%`;
   }
 
   container.addEventListener("mousemove", (e) => {
@@ -29,23 +29,22 @@ function move3DText() {
 
     grp1Txt.forEach((txt, index) => {
       const motion = {
-        x: directionX(xAxis, index, 2),
-        y: directionY(yAxis, index, 95),
+        x: directionX(xAxis, index),
+        y: directionY(yAxis, index),
         delay: index * 0.04,
         duration: 0.5,
         ease: "sine.out",
       };
 
-      gsap.to("#name-container", {
-        x: xAxis / 10,
-        y: yAxis / 10,
-        duration: 0.5,
-        ease: "power4.out",
-      });
-
       gsap.to(txt, { ...motion });
-
       gsap.to(grp2Txt[index], { ...motion });
+    });
+
+    gsap.to("#name-container", {
+      x: xAxis / 10,
+      y: yAxis / 10,
+      duration: 0.5,
+      ease: "power4.out",
     });
   });
 }
@@ -79,12 +78,9 @@ function animateMarquee() {
 animateMarquee();
 
 function changeMarqueeBG() {
-  const marquees = document.querySelectorAll(".animate-marquee");
   const marqueeWrapper = document.querySelector("#marquee-wrapper");
 
   const marqueesContent = document.querySelectorAll(".marquee-content");
-
-  const skillsImgDisplays = document.querySelectorAll(".skills-img-display");
 
   function removeOpacity() {
     marqueesContent.forEach((marqueeContent) => {
@@ -95,73 +91,61 @@ function changeMarqueeBG() {
     });
   }
 
-  let hoveredSkillIndex = 0;
+  function changeBG(targetedMarquee, marqueeWrapper) {
+    const colourHexCode = targetedMarquee.getAttribute("data-bg-color");
+    gsap.to(marqueeWrapper, {
+      backgroundColor: `${colourHexCode}3d`,
+      duration: 0.3,
+    });
+  }
 
-  const sensitivityTilt = document.body.offsetWidth / 400;
-
-  marquees.forEach((marquee) => {
-    marquee.addEventListener(
-      "mousemove",
-      (e) => {
-        const target = e.target;
-        const targetedMarquee = target.closest(".marquee-content");
-
-        gsap.to(skillsImgDisplays[hoveredSkillIndex], {
-          rotateX: 0,
-          rotateY: 0,
-          duration: 0.4,
-          ease: "power2.out",
-        });
-
-        if (!targetedMarquee) return;
-
-        if (!targetedMarquee.classList.contains("marquee-content")) return;
-
-        removeOpacity();
-
-        // BACKGROUND COLOR CHANGE
-        gsap.to(marqueeWrapper, {
-          backgroundColor: `${targetedMarquee.getAttribute("data-bg-color")}3d`,
-          duration: 0.3,
-        });
-
-        // FOCUS
-        marqueesContent.forEach((marqueeContent, index) => {
-          if (marqueeContent == targetedMarquee) {
-            hoveredSkillIndex = index;
-
-            cardTiltAnimation(
-              skillsImgDisplays[hoveredSkillIndex],
-              marqueeContent,
-              {
-                xSensi: sensitivityTilt,
-                ySensi: sensitivityTilt,
-                addEventListener: false,
-                e,
-              }
-            );
-
-            return;
-          }
-
-          gsap.to(marqueeContent, {
-            opacity: 0.3,
-            duration: 0.3,
-          });
-        });
-      },
-      true
-    );
-  });
-
-  marqueeWrapper.addEventListener("mouseleave", () => {
-    removeOpacity();
-
-    gsap.to(skillsImgDisplays[hoveredSkillIndex], {
+  function removeTilt(card) {
+    gsap.to(card, {
       rotateX: 0,
       rotateY: 0,
       duration: 0.4,
       ease: "power2.out",
+    });
+  }
+
+  const sensitivityTilt = document.body.offsetWidth / 400;
+
+  marqueesContent.forEach((marqueeContent) => {
+    marqueeContent.addEventListener("mouseenter", (e) => {
+      const target = e.target;
+
+      marqueesContent.forEach((marqueeContent) => {
+        switch (true) {
+          case target === marqueeContent:
+            changeBG(target, marqueeWrapper);
+
+            gsap.to(marqueeContent, {
+              opacity: 1,
+              duration: 0.3,
+            });
+
+            const card = target.querySelector(".skills-img-display");
+            cardTiltAnimation(card, target, {
+              addEventListener: true,
+              xSensi: sensitivityTilt,
+              ySensi: sensitivityTilt,
+            });
+            break;
+
+          default:
+            gsap.to(marqueeContent, {
+              opacity: 0.3,
+              duration: 0.3,
+            });
+            break;
+        }
+      });
+    });
+
+    marqueeContent.addEventListener("mouseleave", (e) => {
+      const target = e.target;
+      removeOpacity();
+      removeTilt(target.querySelector(".skills-img-display"));
     });
   });
 }
@@ -190,7 +174,7 @@ loop(".ia-grp-box-3", { delay: 0.3 });
 
 loop(".ia-web", { delay: 0 });
 
-function customScrollBar() {
+function hoverToSeeScrollbar() {
   const scrollBarContainer = document.querySelector(
     "#custom-scroll-bar-container"
   );
@@ -214,7 +198,7 @@ function customScrollBar() {
     });
   });
 }
-customScrollBar();
+hoverToSeeScrollbar();
 
 function showISTTime() {
   const timeElem = document.querySelector("#show-time");
@@ -269,7 +253,7 @@ function textGradientEffect() {
 }
 textGradientEffect();
 
-function scrollTriggerAnimation() {
+function scrollTriggerAboutMeSection() {
   const scrollTrigger = {
     trigger: "#about-me-section",
     start: "top center",
@@ -303,18 +287,24 @@ function scrollTriggerAnimation() {
     scrollTrigger,
   });
 }
-scrollTriggerAnimation();
+scrollTriggerAboutMeSection();
 
 function cursor() {
   const cursor = document.querySelector("#cursor");
   const webContainer = document.querySelector("#web-container");
 
   webContainer.addEventListener("mousemove", (e) => {
+    const cursorRect = cursor.getBoundingClientRect();
+
+    let xAxis;
+    if (e.x + cursorRect.width > window.innerHeight)
+      xAxis = e.x - cursorRect.width;
+    else xAxis = e.x;
+
     gsap.to(cursor, {
-      x: e.x - 10,
+      x: xAxis,
       y: e.y - 5,
       duration: 0.2,
-      ease: "none",
     });
   });
 }
@@ -322,29 +312,17 @@ cursor();
 
 function label(elementId = "", label = "") {
   const element = document.querySelector(`${elementId}`);
-  const cursor = document.querySelector("#cursor");
   const labelLenght = label.length;
 
-  const boxWidth = labelLenght >= 8 ? labelLenght - 3 : labelLenght;
+  const boxWidth = labelLenght >= 8 ? labelLenght - 2 : labelLenght;
 
   element.addEventListener("mouseenter", (e) => {
     addCursorText(label);
     changeCursorShape(true, {
       duration: 0.5,
-      width: `${boxWidth}ch`,
-      height: 30,
+      width: `${boxWidth * 0.7}vw`,
       transformOrigin: "left",
       ease: "power2.out",
-      onComplete() {
-        const cursorRect = cursor.getBoundingClientRect();
-
-        if (cursorRect.left + cursorRect.width <= innerWidth) return;
-
-        gsap.to(cursor, {
-          x: e.x - cursor.getBoundingClientRect().width,
-          duration: 0.23,
-        });
-      },
     });
   });
 
@@ -361,4 +339,4 @@ label("#project-btn", "Project section");
 label("#top-scroll-box", "Top");
 label("#bottom-scroll-box", "Bottom");
 
-label("#timing-box", "Chattisgrah, Bhilai");
+label("#timing-box", "Bhilai, Chhattisgarh");
