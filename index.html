@@ -61,868 +61,912 @@
       ></p>
     </div>
 
-    <nav class="fixed py-[2vh] px-[2vw] top-0 z-1 xl-text w-full" id="nav-bar">
-      <section class="flex flex-row justify-between items-center">
-        <div>
-          <a href="index.html" class="flex flex-row gap-[0.5vw] xl-text">
-            <div
-              class="kotta-one-font flex flex-row"
-              id="himansh-letter-container"
-            >
-              <span class="stretch-letter inline-block">H</span>
-              <span class="stretch-letter inline-block">i</span>
-              <span class="stretch-letter inline-block">a</span>
-              <span class="stretch-letter inline-block">m</span>
-              <span class="stretch-letter inline-block">n</span>
-              <span class="stretch-letter inline-block">s</span>
-              <span class="stretch-letter inline-block">h</span>
-            </div>
-            <!--  -->
-            <div class="flex flex-row font-semibold" id="web-letter-container">
-              <span class="stretch-letter inline-block">W</span>
-              <span class="stretch-letter inline-block">e</span>
-              <span class="stretch-letter inline-block">b</span>
-            </div>
-          </a>
-        </div>
-
-        <section class="w-[70%] h-full lg-text">
-          <div>
-            <!-- Full Screen -->
-            <button
-              class="flex flex-row gap-[1vw] items-center"
-              id="full-screen-btn"
-            >
-              <div class="flex-[1] w-full h-full">
-                <img
-                  src="assets/full_screen.svg"
-                  alt="full_screen_svg"
-                  id="full-screen-svg"
-                  class="h-full w-full"
-                />
-              </div>
-              <span class="kotta-one-font" id="txt">Full Screen</span>
-            </button>
-          </div>
-        </section>
-      </section>
-    </nav>
-
-    <div
-      data-scroll-section
-      id="web-container"
-      role="main"
-      class="lg:cursor-none h-max relative"
-    >
-      <!-- CUSTOM SCROLL BAR -->
-      <aside
-        id="custom-scroll-bar-container"
-        class="fixed w-max top-0 -translate-y-[1%] right-0 h-screen z-100 xl-text"
-        role="navigation"
-        data-scroll
-        data-scroll-sticky
-        data-scroll-target="#web-container"
-      >
-        <div class="h-full w-full flex flex-col items-center">
-          <a
-            href="#landing-page-section"
-            data-scroll-to
-            class="flex flex-row justify-end items-center gap-[0.8vw]"
-            id="top-scroll-box"
-            role="button"
-          >
-            <!-- UP ARROW -->
-            <div>
-              <!-- 1 -->
-              <img
-                src="assets/arrow_1.svg"
-                alt="arrow"
-                class="up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-              />
-              <!-- 2 -->
-              <img
-                src="assets/arrow_2.svg"
-                alt="arrow"
-                class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-              />
-              <!-- 3 -->
-              <img
-                src="assets/arrow_3.svg"
-                alt="arrow"
-                class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-              />
-              <!-- 4 -->
-              <img
-                src="assets/arrow_4.svg"
-                alt="arrow"
-                class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-              />
-              <!-- 5 -->
-              <img
-                src="assets/arrow_5.svg"
-                alt="arrow"
-                class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-              />
-            </div>
-          </a>
-
-          <!-- BARS -->
-          <main class="h-full w-[1vw] flex flex-col gap-[0.8vh]">
-            <a
-              role="button"
-              href="#about-me-section"
-              id="about-me-btn"
-              class="w-full h-[50%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
-            ></a>
-            <!--  -->
-            <a
-              href="#"
-              role="button"
-              id="project-btn"
-              class="w-full h-[50%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
-            ></a>
-          </main>
-
-          <!--  -->
-          <a
-            href="#landing-page-section"
-            role="button"
-            class="flex flex-row justify-end items-center gap-[0.8vw]"
-            id="bottom-scroll-box"
-          >
-            <!-- DOWN ARROW -->
-            <div>
-              <!-- 1 -->
-              <img
-                src="assets/arrow_1.svg"
-                alt="arrow"
-                class="arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-              />
-              <!-- 2 -->
-              <img
-                src="assets/arrow_2.svg"
-                alt="arrow"
-                class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-              />
-              <!-- 3 -->
-              <img
-                src="assets/arrow_3.svg"
-                alt="arrow"
-                class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-              />
-              <!-- 4 -->
-              <img
-                src="assets/arrow_4.svg"
-                alt="arrow"
-                class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-              />
-              <!-- 5 -->
-              <img
-                src="assets/arrow_5.svg"
-                alt="arrow"
-                class="hidden arrows-down w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
-              />
-            </div>
-          </a>
-        </div>
-      </aside>
-
-      <!-- CONTENT -->
+    <div id="container">
       <section
-        class="bg-repeat backdrop-blur-[10px] xl-text relative"
-        style="background-image: url('assets/noice.svg')"
+        role="main"
+        class="lg:cursor-none h-max relative"
+        data-scroll-section
+        id="web-container"
       >
-        <!--  -->
-        <main class="px-[2vw]">
-          <!-- HERO SECTION -->
-          <section
-            id="landing-page-section"
-            class="h-screen flex flex-col justify-center items-center gap-7 sm:gap-[4vh]"
-          >
-            <div class="flex flex-col md:gap-[0.5vw]">
-              <article
-                data-scroll
-                data-scroll-direction="horizontal"
-                data-scroll-speed="2"
-                class="w-max"
-              >
-                <div class="tracking-wide">
-                  <h3 class="flex flex-row">
-                    <div id="word" class="flex flex-row">Hello</div>
-                    <div id="comma" class="block">,</div>
-                    I am
-                  </h3>
-                </div>
-
-                <!-- imp -->
+        <nav
+          class="fixed py-[2vh] px-[2vw] z-1 xl-text w-full"
+          id="nav-bar"
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#web-container"
+        >
+          <section class="flex flex-row justify-between items-center">
+            <div>
+              <a href="index.html" class="flex flex-row gap-[0.5vw] xl-text">
                 <div
-                  class="relative w-max text-7xl lg:text-[6vw] font-semibold tracking-wider -mt-3.5 h-20 md:h-[9vw] lg:h-[6vw] flex flex-row gap-0 lg:gap-2.5 2xl:gap-[1vw]"
-                  id="name-container"
+                  class="kotta-one-font flex flex-row"
+                  id="himansh-letter-container"
                 >
-                  <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
+                  <span class="stretch-letter inline-block">H</span>
+                  <span class="stretch-letter inline-block">i</span>
+                  <span class="stretch-letter inline-block">a</span>
+                  <span class="stretch-letter inline-block">m</span>
+                  <span class="stretch-letter inline-block">n</span>
+                  <span class="stretch-letter inline-block">s</span>
+                  <span class="stretch-letter inline-block">h</span>
+                </div>
+                <!--  -->
+                <div
+                  class="flex flex-row font-semibold"
+                  id="web-letter-container"
+                >
+                  <span class="stretch-letter inline-block">W</span>
+                  <span class="stretch-letter inline-block">e</span>
+                  <span class="stretch-letter inline-block">b</span>
+                </div>
+              </a>
+            </div>
+
+            <section class="w-[70%] h-full lg-text">
+              <div>
+                <!-- Full Screen -->
+                <button
+                  class="flex flex-row gap-[1vw] items-center"
+                  id="full-screen-btn"
+                >
+                  <div class="flex-[1] w-full h-full">
+                    <img
+                      src="assets/full_screen.svg"
+                      alt="full_screen_svg"
+                      id="full-screen-svg"
+                      class="h-full w-full"
+                    />
+                  </div>
+                  <span class="kotta-one-font" id="txt">Full Screen</span>
+                </button>
+              </div>
+            </section>
+          </section>
+        </nav>
+
+        <!-- CUSTOM SCROLL BAR -->
+        <aside
+          id="custom-scroll-bar-container"
+          class="fixed w-max right-0 h-screen z-10 xl-text"
+          role="navigation"
+          data-scroll
+          data-scroll-sticky
+          data-scroll-target="#web-container"
+        >
+          <div
+            class="h-full w-full flex flex-col items-center"
+            id="scrollbar-wrapper"
+          >
+            <a
+              href="#landing-page-section"
+              data-scroll-to
+              class="flex flex-row justify-end items-center gap-[0.8vw]"
+              id="top-scroll-box"
+              role="button"
+            >
+              <!-- Top -->
+              <ul>
+                <!-- 1 -->
+                <li>
+                  <img
+                    src="assets/arrow_1.svg"
+                    alt="arrow"
+                    class="up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                </li>
+                <!-- 2 -->
+                <li>
+                  <img
+                    src="assets/arrow_2.svg"
+                    alt="arrow"
+                    class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                </li>
+                <!-- 3 -->
+                <li>
+                  <img
+                    src="assets/arrow_3.svg"
+                    alt="arrow"
+                    class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                </li>
+                <!-- 4 -->
+                <li>
+                  <img
+                    src="assets/arrow_4.svg"
+                    alt="arrow"
+                    class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                </li>
+                <!-- 5 -->
+                <li>
+                  <img
+                    src="assets/arrow_5.svg"
+                    alt="arrow"
+                    class="hidden up-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                  />
+                </li>
+              </ul>
+            </a>
+
+            <!-- ANCHOR BARS -->
+            <main class="h-full w-[1vw] flex flex-col gap-[0.8vh]">
+              <!-- About me -->
+              <a
+                role="button"
+                href="#about-me-section"
+                data-scroll-to
+                id="about-me-btn"
+                class="w-full h-[50%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
+              ></a>
+              <!-- Project  -->
+              <a
+                href="#"
+                role="button"
+                data-scroll-to
+                id="project-btn"
+                class="w-full h-[50%] border border-white/20 rounded-[0.2vw] hover:w-[1.5vw] transition-all duration-300 backdrop-blur-2xl"
+              ></a>
+            </main>
+
+            <!-- Bottom -->
+            <a
+              href="#landing-page-section"
+              role="button"
+              class="flex flex-row justify-end items-center gap-[0.8vw]"
+              id="bottom-scroll-box"
+            >
+              <!-- DOWN ARROW -->
+              <ul>
+                <!-- 1 -->
+                <li>
+                  <img
+                    src="assets/arrow_1.svg"
+                    alt="arrow"
+                    class="down-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+                  />
+                </li>
+                <!-- 2 -->
+                <li>
+                  <img
+                    src="assets/arrow_2.svg"
+                    alt="arrow"
+                    class="hidden down-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+                  />
+                </li>
+                <!-- 3 -->
+                <li>
+                  <img
+                    src="assets/arrow_3.svg"
+                    alt="arrow"
+                    class="hidden down-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+                  />
+                </li>
+                <!-- 4 -->
+                <li>
+                  <img
+                    src="assets/arrow_4.svg"
+                    alt="arrow"
+                    class="hidden down-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+                  />
+                </li>
+                <!-- 5 -->
+                <li>
+                  <img
+                    src="assets/arrow_5.svg"
+                    alt="arrow"
+                    class="hidden down-arrows w-8 h-8 md:w-[2.5vw] md:h-[2.5vw] -rotate-180"
+                  />
+                </li>
+              </ul>
+            </a>
+          </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <section
+          class="bg-repeat backdrop-blur-[10px] xl-text relative"
+          style="background-image: url('assets/noice.svg')"
+        >
+          <!--  -->
+          <main class="px-[2vw]">
+            <!-- HERO SECTION -->
+            <section
+              id="landing-page-section"
+              class="h-screen flex flex-col justify-center items-center gap-7 sm:gap-[4vh]"
+            >
+              <!-- INTRO -->
+              <div class="flex flex-col md:gap-[0.5vw]">
+                <article
+                  data-scroll
+                  data-scroll-direction="horizontal"
+                  data-scroll-speed="2"
+                  class="w-max"
+                >
+                  <!-- hello -->
+                  <div class="tracking-wide">
+                    <h3 class="flex flex-row">
+                      <div id="word" class="flex flex-row">Hello</div>
+                      <div id="comma" class="block">,</div>
+                      I am
+                    </h3>
+                  </div>
+
+                  <!-- Himansh -->
                   <div
-                    class="w-full h-full bg-transparent absolute z-50 top-3"
-                    id="name-wrapper"
+                    class="relative w-max text-7xl lg:text-[6vw] font-semibold tracking-wider -mt-3.5 h-20 md:h-[9vw] lg:h-[6vw] flex flex-row gap-0 lg:gap-2.5 2xl:gap-[1vw]"
+                    id="name-container"
+                  >
+                    <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
+                    <div
+                      class="w-full h-full bg-transparent absolute z-50 top-3"
+                      id="name-wrapper"
+                    ></div>
+
+                    <section class="name-sections">
+                      <article
+                        class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[5%] translate-x-[-1%] move-txt-grp1"
+                      >
+                        <div class="ia-grp-box-1">
+                          <span class="text-[#595959] block">Him</span>
+                          <span class="text-[#595959] block">Him</span>
+                        </div>
+                        <div class="ia-grp-box-1">
+                          <span class="text-[#595959] block">Him</span>
+                          <span class="text-[#595959] block">Him</span>
+                        </div>
+                      </article>
+                      <!--  -->
+                      <article
+                        class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-90%] translate-x-[1%] move-txt-grp1"
+                      >
+                        <div class="ia-grp-box-2">
+                          <span class="text-[#aeaeae] block">Him</span>
+                          <span class="text-[#aeaeae] block">Him</span>
+                        </div>
+                        <div class="ia-grp-box-2">
+                          <span class="text-[#aeaeae] block">Him</span>
+                          <span class="text-[#aeaeae] block">Him</span>
+                        </div>
+                      </article>
+                      <!--  -->
+                      <article
+                        class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-185%] translate-x-[3%] move-txt-grp1"
+                      >
+                        <div class="ia-grp-box-3">
+                          <span class="text-[#ffffff] block">Him</span>
+                          <span class="text-[#ffffff] block">Him</span>
+                        </div>
+                        <div class="ia-grp-box-3">
+                          <span class="text-[#ffffff] block">Him</span>
+                          <span class="text-[#ffffff] block">Him</span>
+                        </div>
+                      </article>
+                    </section>
+
+                    <!-- image -->
+                    <section
+                      id="himansh-image-box"
+                      class="w-25 h-25 lg:w-[6vw] lg:h-[6vw] relative hidden"
+                    >
+                      <img
+                        src="assets/i_am.png"
+                        alt="pic of admin"
+                        class="rounded-[5px] w-full h-full absolute top-0 left-0 -z-1 blur-[0.3vw]"
+                      />
+                      <img
+                        src="assets/i_am.png"
+                        alt="pic of admin"
+                        id="himansh-img"
+                        class="rounded-[0.4vw] w-full h-full"
+                      />
+                    </section>
+
+                    <!--  -->
+                    <section
+                      id="img-right-side-box"
+                      class="name-sections translate-x-[-3%]"
+                    >
+                      <!-- Layer 1 -->
+                      <article
+                        class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[5%] translate-x-[-1%] move-txt-grp2"
+                      >
+                        <!-- ia == intro-animation -->
+                        <div class="ia-grp-box-1">
+                          <span class="text-[#595959] block">ansh</span>
+                          <span class="text-[#595959] block">ansh</span>
+                        </div>
+                        <div class="ia-grp-box-1">
+                          <span class="text-[#595959] block">ansh</span>
+                          <span class="text-[#595959] block">ansh</span>
+                        </div>
+                      </article>
+
+                      <!-- Layer 2 -->
+                      <article
+                        class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-90%] translate-x-[1%] move-txt-grp2"
+                      >
+                        <div class="ia-grp-box-2">
+                          <span class="text-[#aeaeae] block">ansh</span>
+                          <span class="text-[#aeaeae] block">ansh</span>
+                        </div>
+                        <div class="ia-grp-box-2">
+                          <span class="text-[#aeaeae] block">ansh</span>
+                          <span class="text-[#aeaeae] block">ansh</span>
+                        </div>
+                      </article>
+
+                      <!-- Layer 3 -->
+                      <article
+                        class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-185%] translate-x-[3%] move-txt-grp2"
+                      >
+                        <div class="ia-grp-box-3">
+                          <span class="text-[#ffffff] block">ansh</span>
+                          <span class="text-[#ffffff] block">ansh</span>
+                        </div>
+                        <div class="ia-grp-box-3">
+                          <span class="text-[#ffffff] block">ansh</span>
+                          <span class="text-[#ffffff] block">ansh</span>
+                        </div>
+                      </article>
+                    </section>
+                  </div>
+                </article>
+
+                <!-- I am a -->
+                <article
+                  data-scroll
+                  data-scroll-direction="horizontal"
+                  data-scroll-speed="-2"
+                  class="w-full flex flex-col-reverse gap-7 md:gap-0 md:flex-row md:w-max"
+                >
+                  <section
+                    data-scroll
+                    data-scroll-direction="horizontal"
+                    data-scroll-speed="4"
+                    class="self-center md:mt-14 lg-text"
+                    id="timing-box"
+                  >
+                    <div class="flex flex-row items-center gap-2">
+                      <span class="tricolor-gradient" id="india-txt"
+                        >India</span
+                      >
+                      <div
+                        class="bg-white/50 backdrop-blur-2xl rounded-full w-1 h-1 2xl:w-[0.6vw] 2xl:h-[0.6vw]"
+                      ></div>
+                      <span class="kotta-one-font static" id="show-time"
+                        >14:34:55</span
+                      >
+                    </div>
+                  </section>
+
+                  <section class="flex fst-media flex-row gap-1.5">
+                    <div class="tracking-wide leading-tight">
+                      <span>And i am a</span>
+                    </div>
+
+                    <!-- imp -->
+                    <div class="text-center tracking-wider flex flex-col">
+                      <div
+                        class="text-4xl sm:text-5xl lg:text-[4vw] font-bold flex flex-row justify-center gap-2.5 2xl:gap-[1vw] relative"
+                      >
+                        <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
+                        <div
+                          class="w-full h-full bg-transparent absolute z-50 top-3"
+                          id="desktop-showcase-wrapper"
+                        ></div>
+
+                        <section id="ia-web-wrapper">
+                          <article
+                            class="h-9 sm:h-[48px] lg:h-[4vw] overflow-hidden font-semibold"
+                          >
+                            <div class="ia-web">
+                              <h1>Web</h1>
+                              <h1>Web</h1>
+                            </div>
+                            <div class="ia-web">
+                              <h1>Web</h1>
+                              <h1>Web</h1>
+                            </div>
+                          </article>
+                        </section>
+
+                        <!-- image -->
+                        <section
+                          id="himansh-desktop-box"
+                          class="w-35 h-25 lg:w-[10vw] lg:h-[6vw] relative translate-y-[-40%] hidden"
+                        >
+                          <img
+                            src="assets/my_desktop.jpg"
+                            alt="Himansh's desktop"
+                            class="rounded-[5px] w-full h-full absolute top-0 left-0 -z-1 blur-lg saturate-200 brightness-200"
+                          />
+                          <img
+                            src="assets/my_desktop.jpg"
+                            alt="Himansh's desktop"
+                            id="himansh-desktop"
+                            class="rounded-[0.4vw] w-full h-full"
+                          />
+                        </section>
+
+                        <section id="desktop-right-slider">
+                          <h1>Developer</h1>
+                        </section>
+                      </div>
+
+                      <h1 class="lg:translate-x-[-10%] lg:translate-y-[-60%]">
+                        { Frontend }
+                      </h1>
+                    </div>
+                  </section>
+                </article>
+              </div>
+
+              <!-- CORE SKILLS SECTION -->
+              <div
+                class="flex flex-col justify-center items-center gap-[3vh] lg:w-[80%] w-full"
+              >
+                <section
+                  class="flex flex-row items-center justify-center gap-1.5"
+                  id="core-skills-section"
+                >
+                  <article class="h-7 md:h-[3vw]">
+                    <p
+                      class="font-semibold text-transparent"
+                      style="-webkit-text-stroke: 1px white; color: transparent"
+                    >
+                      Core Skills
+                    </p>
+                    <p
+                      class="font-semibold translate-y-[-100%]"
+                      id="cs-bold-txt"
+                    >
+                      Core Skills
+                    </p>
+                  </article>
+
+                  <!-- STAR -->
+                  <ul>
+                    <!-- 1 -->
+                    <li>
+                      <img
+                        src="assets/star_1.svg"
+                        alt="star"
+                        class="stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+
+                    <!-- 2 -->
+                    <li>
+                      <img
+                        src="assets/star_2.svg"
+                        alt="star"
+                        class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+
+                    <!-- 3 -->
+                    <li>
+                      <img
+                        src="assets/star_3.svg"
+                        alt="star"
+                        class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+
+                    <!-- 4 -->
+                    <li>
+                      <img
+                        src="assets/star_4.svg"
+                        alt="star"
+                        class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+
+                    <!-- 5 -->
+                    <li>
+                      <img
+                        src="assets/star_5.svg"
+                        alt="star"
+                        class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+
+                    <!-- 6 -->
+                    <li>
+                      <img
+                        src="assets/star_6.svg"
+                        alt="star"
+                        class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+                  </ul>
+                </section>
+
+                <section
+                  id="marquee-wrapper"
+                  class="bg-[#24bef13d] backdrop-blur-2xl w-full overflow-hidden rounded-[0.5vw] font-bold relative"
+                >
+                  <!-- Left fade -->
+                  <div
+                    class="pointer-events-none absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-[#151515] to-transparent z-10"
                   ></div>
 
-                  <section class="name-sections">
-                    <article
-                      class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[5%] translate-x-[-1%] move-txt-grp1"
-                    >
-                      <div class="ia-grp-box-1">
-                        <span class="text-[#595959] block">Him</span>
-                        <span class="text-[#595959] block">Him</span>
-                      </div>
-                      <div class="ia-grp-box-1">
-                        <span class="text-[#595959] block">Him</span>
-                        <span class="text-[#595959] block">Him</span>
-                      </div>
-                    </article>
-                    <!--  -->
-                    <article
-                      class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-90%] translate-x-[1%] move-txt-grp1"
-                    >
-                      <div class="ia-grp-box-2">
-                        <span class="text-[#aeaeae] block">Him</span>
-                        <span class="text-[#aeaeae] block">Him</span>
-                      </div>
-                      <div class="ia-grp-box-2">
-                        <span class="text-[#aeaeae] block">Him</span>
-                        <span class="text-[#aeaeae] block">Him</span>
-                      </div>
-                    </article>
-                    <!--  -->
-                    <article
-                      class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-185%] translate-x-[3%] move-txt-grp1"
-                    >
-                      <div class="ia-grp-box-3">
-                        <span class="text-[#ffffff] block">Him</span>
-                        <span class="text-[#ffffff] block">Him</span>
-                      </div>
-                      <div class="ia-grp-box-3">
-                        <span class="text-[#ffffff] block">Him</span>
-                        <span class="text-[#ffffff] block">Him</span>
-                      </div>
-                    </article>
-                  </section>
-
-                  <!-- image -->
-                  <section
-                    id="himansh-image-box"
-                    class="w-25 h-25 lg:w-[6vw] lg:h-[6vw] relative hidden"
+                  <!-- MARQUEE CONTENT -->
+                  <div
+                    class="flex flex-row items-center gap-[5vw] w-max py-[3vh]"
+                    data-scroll
+                    data-scroll-direction="horizontal"
+                    data-scroll-speed="8"
                   >
-                    <img
-                      src="assets/i_am.png"
-                      alt="pic of admin"
-                      class="rounded-[5px] w-full h-full absolute top-0 left-0 -z-1 blur-[0.3vw]"
-                    />
-                    <img
-                      src="assets/i_am.png"
-                      alt="pic of admin"
-                      id="himansh-img"
-                      class="rounded-[0.4vw] w-full h-full"
-                    />
-                  </section>
-
-                  <!--  -->
-                  <section
-                    id="img-right-side-box"
-                    class="name-sections translate-x-[-3%]"
-                  >
-                    <!-- Layer 1 -->
-                    <article
-                      class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[5%] translate-x-[-1%] move-txt-grp2"
+                    <ol
+                      class="flex flex-row gap-15 md:gap-[5vw] w-max h-full animate-marquee"
                     >
-                      <!-- ia == intro-animation -->
-                      <div class="ia-grp-box-1">
-                        <span class="text-[#595959] block">ansh</span>
-                        <span class="text-[#595959] block">ansh</span>
-                      </div>
-                      <div class="ia-grp-box-1">
-                        <span class="text-[#595959] block">ansh</span>
-                        <span class="text-[#595959] block">ansh</span>
-                      </div>
-                    </article>
+                      <!-- HTML -->
+                      <li class="marquee-content" data-bg-color="#BF4322">
+                        <div class="flex flex-row gap-[1vw] items-center">
+                          <div class="relative card-tilt-anime">
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                              src="assets/HTML-logo.webp"
+                              alt="HTML-logo"
+                            />
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                              src="assets/HTML-logo.webp"
+                              alt="HTML-logo"
+                            />
+                          </div>
+                          <span>HTML</span>
+                          <sup
+                            class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                            >1</sup
+                          >
+                        </div>
+                      </li>
 
-                    <!-- Layer 2 -->
-                    <article
-                      class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-90%] translate-x-[1%] move-txt-grp2"
-                    >
-                      <div class="ia-grp-box-2">
-                        <span class="text-[#aeaeae] block">ansh</span>
-                        <span class="text-[#aeaeae] block">ansh</span>
-                      </div>
-                      <div class="ia-grp-box-2">
-                        <span class="text-[#aeaeae] block">ansh</span>
-                        <span class="text-[#aeaeae] block">ansh</span>
-                      </div>
-                    </article>
+                      <!-- Tailwind CSS -->
+                      <li class="marquee-content" data-bg-color="#15C2B8">
+                        <div class="flex flex-row gap-[1vw] items-center">
+                          <div class="relative card-tilt-anime">
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                              src="assets/tailwind-css-image.png"
+                              alt="Tailwind-logo"
+                            />
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                              src="assets/tailwind-css-image.png"
+                              alt="Tailwind-logo"
+                            />
+                          </div>
+                          <span>Tailwind CSS</span>
+                          <sup
+                            class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                            >2</sup
+                          >
+                        </div>
+                      </li>
 
-                    <!-- Layer 3 -->
-                    <article
-                      class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[-185%] translate-x-[3%] move-txt-grp2"
+                      <!-- JavaScript -->
+                      <li class="marquee-content" data-bg-color="#F0DB4F">
+                        <div class="flex flex-row gap-[1vw] items-center">
+                          <div class="relative card-tilt-anime">
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                              src="assets/JavaScript-logo.png"
+                              alt="JavaScript-logo"
+                            />
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                              src="assets/JavaScript-logo.png"
+                              alt="JavaScript-logo"
+                            />
+                          </div>
+                          <span>JavaScript</span>
+                          <sup
+                            class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                            >3</sup
+                          >
+                        </div>
+                      </li>
+
+                      <!-- GSAP -->
+                      <li class="marquee-content" data-bg-color="#0BE348">
+                        <div class="flex flex-row gap-[1vw] items-center">
+                          <div class="relative card-tilt-anime">
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                              src="assets/GSAP-logo.avif"
+                              alt="GSAP-logo"
+                            />
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                              src="assets/GSAP-logo.avif"
+                              alt="GSAP-logo"
+                            />
+                          </div>
+                          <span>GSAP</span>
+                          <sup
+                            class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                            >4</sup
+                          >
+                        </div>
+                      </li>
+                    </ol>
+
+                    <!--  -->
+                    <ol
+                      class="flex flex-row gap-15 md:gap-[5vw] w-max animate-marquee"
                     >
-                      <div class="ia-grp-box-3">
-                        <span class="text-[#ffffff] block">ansh</span>
-                        <span class="text-[#ffffff] block">ansh</span>
-                      </div>
-                      <div class="ia-grp-box-3">
-                        <span class="text-[#ffffff] block">ansh</span>
-                        <span class="text-[#ffffff] block">ansh</span>
-                      </div>
-                    </article>
-                  </section>
+                      <li class="marquee-content" data-bg-color="#BF4322">
+                        <div class="flex flex-row gap-[1vw] items-center">
+                          <div class="relative card-tilt-anime">
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                              src="assets/HTML-logo.webp"
+                              alt="HTML-logo"
+                            />
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                              src="assets/HTML-logo.webp"
+                              alt="HTML-logo"
+                            />
+                          </div>
+                          <span>HTML</span>
+                          <sup
+                            class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                            >1</sup
+                          >
+                        </div>
+                      </li>
+
+                      <!-- Tailwind CSS -->
+                      <li class="marquee-content" data-bg-color="#15C2B8">
+                        <div class="flex flex-row gap-[1vw] items-center">
+                          <div class="relative card-tilt-anime">
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                              src="assets/tailwind-css-image.png"
+                              alt="Tailwind-logo"
+                            />
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                              src="assets/tailwind-css-image.png"
+                              alt="Tailwind-logo"
+                            />
+                          </div>
+                          <span>Tailwind CSS</span>
+                          <sup
+                            class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                            >2</sup
+                          >
+                        </div>
+                      </li>
+
+                      <!-- JavaScript -->
+                      <li class="marquee-content" data-bg-color="#F0DB4F">
+                        <div class="flex flex-row gap-[1vw] items-center">
+                          <div class="relative card-tilt-anime">
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                              src="assets/JavaScript-logo.png"
+                              alt="JavaScript-logo"
+                            />
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                              src="assets/JavaScript-logo.png"
+                              alt="JavaScript-logo"
+                            />
+                          </div>
+                          <span>JavaScript</span>
+                          <sup
+                            class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                            >3</sup
+                          >
+                        </div>
+                      </li>
+
+                      <!-- GSAP -->
+                      <li class="marquee-content" data-bg-color="#0BE348">
+                        <div class="flex flex-row gap-[1vw] items-center">
+                          <div class="relative card-tilt-anime">
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
+                              src="assets/GSAP-logo.avif"
+                              alt="GSAP-logo"
+                            />
+                            <img
+                              class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
+                              src="assets/GSAP-logo.avif"
+                              alt="GSAP-logo"
+                            />
+                          </div>
+                          <span>GSAP</span>
+                          <sup
+                            class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
+                            >4</sup
+                          >
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+
+                  <!-- Right fade -->
+                  <div
+                    class="pointer-events-none absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-[#151515] to-transparent z-10"
+                  ></div>
+                </section>
+              </div>
+            </section>
+
+            <!-- WHO AM I? -->
+            <section
+              id="about-me-section"
+              class="w-full flex flex-col gap-1.5 md:gap-[1vw]"
+            >
+              <article
+                class="font-semibold flex flex-col justify-center gap-1.5 md:gap-[1vw]"
+              >
+                <div class="flex flex-row w-max" id="wmi-container">
+                  <span class="h-7 md:h-[3vw] inline-block">
+                    <div
+                      class="font-semibold text-transparent"
+                      style="-webkit-text-stroke: 1px white; color: transparent"
+                    >
+                      Who am i
+                    </div>
+                    <div
+                      class="font-semibold translate-y-[-100%]"
+                      id="about-me-bold-txt"
+                    >
+                      Who am i
+                    </div>
+                  </span>
+
+                  <ul class="flex justify-center items-center">
+                    <!-- 1 -->
+                    <li>
+                      <img
+                        src="assets/qm_1.svg"
+                        alt="question mark"
+                        class="question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+                    <!-- 2 -->
+                    <li>
+                      <img
+                        src="assets/qm_2.svg"
+                        alt="question mark"
+                        class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+                    <!-- 3 -->
+                    <li>
+                      <img
+                        src="assets/qm_3.svg"
+                        alt="question mark"
+                        class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+                    <!-- 4 -->
+                    <li>
+                      <img
+                        src="assets/qm_4.svg"
+                        alt="question mark"
+                        class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+                    <!-- 5 -->
+                    <li>
+                      <img
+                        src="assets/qm_5.svg"
+                        alt="question mark"
+                        class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
+                      />
+                    </li>
+                  </ul>
                 </div>
+
+                <div id="seprate-line-abt-sec" class="h-0.5 bg-white w-0"></div>
               </article>
 
               <!--  -->
-              <article
-                data-scroll
-                data-scroll-direction="horizontal"
-                data-scroll-speed="-2"
-                class="w-full flex flex-col-reverse gap-7 md:gap-0 md:flex-row md:w-max"
-              >
+              <article class="flex flex-row gap-1.5 md:gap-[1vw] items-center">
+                <!-- video - Timelapse - coding -->
                 <section
-                  data-scroll
-                  data-scroll-direction="horizontal"
-                  data-scroll-speed="4"
-                  class="self-center md:mt-14 lg-text"
-                  id="timing-box"
+                  class="opacity-0 blur-2xl scale-120 grow"
+                  id="zoom-out-st"
                 >
-                  <div class="flex flex-row items-center gap-2">
-                    <span class="tricolor-gradient" id="india-txt">India</span>
-                    <div
-                      class="bg-white/50 backdrop-blur-2xl rounded-full w-1 h-1 2xl:w-[0.6vw] 2xl:h-[0.6vw]"
-                    ></div>
-                    <span class="kotta-one-font static" id="show-time"
-                      >14:34:55</span
-                    >
-                  </div>
+                  <!-- blured bg vid -->
+                  <video
+                    src="assets/timelapse_coding.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    class="hidden lg:block w-[50vw] h-max rounded-xl blur-xl absolute top-0 -z-1"
+                  ></video>
+                  <!-- actual vid -->
+                  <video
+                    src="assets/timelapse_coding.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    class="hidden lg:block w-[50vw] h-max rounded-xl"
+                  ></video>
                 </section>
 
-                <section class="flex fst-media flex-row gap-1.5">
-                  <div class="tracking-wide leading-tight">
-                    <span>And i am a</span>
-                  </div>
-
-                  <!-- imp -->
-                  <div class="text-center tracking-wider flex flex-col">
-                    <div
-                      class="text-4xl sm:text-5xl lg:text-[4vw] font-bold flex flex-row justify-center gap-2.5 2xl:gap-[1vw] relative"
-                    >
-                      <!-- OVERLAY TO REMOVE GLITCHY EFFECT -->
-                      <div
-                        class="w-full h-full bg-transparent absolute z-50 top-3"
-                        id="desktop-showcase-wrapper"
-                      ></div>
-
-                      <section id="ia-web-wrapper">
-                        <article
-                          class="h-9 sm:h-[48px] lg:h-[4vw] overflow-hidden font-semibold"
-                        >
-                          <div class="ia-web">
-                            <h1>Web</h1>
-                            <h1>Web</h1>
-                          </div>
-                          <div class="ia-web">
-                            <h1>Web</h1>
-                            <h1>Web</h1>
-                          </div>
-                        </article>
-                      </section>
-
-                      <!-- image -->
-                      <section
-                        id="himansh-desktop-box"
-                        class="w-35 h-25 lg:w-[10vw] lg:h-[6vw] relative translate-y-[-40%] hidden"
-                      >
-                        <img
-                          src="assets/my_desktop.jpg"
-                          alt="Himansh's desktop"
-                          class="rounded-[5px] w-full h-full absolute top-0 left-0 -z-1 blur-lg saturate-200 brightness-200"
-                        />
-                        <img
-                          src="assets/my_desktop.jpg"
-                          alt="Himansh's desktop"
-                          id="himansh-desktop"
-                          class="rounded-[0.4vw] w-full h-full"
-                        />
-                      </section>
-
-                      <section id="desktop-right-slider">
-                        <h1>Developer</h1>
-                      </section>
-                    </div>
-
-                    <h1 class="lg:translate-x-[-10%] lg:translate-y-[-60%]">
-                      { Frontend }
-                    </h1>
-                  </div>
-                </section>
-              </article>
-            </div>
-
-            <!-- CORE SKILLS SECTION -->
-            <div
-              class="flex flex-col justify-center items-center gap-[3vh] lg:w-[80%] w-full"
-            >
-              <section
-                class="flex flex-row items-center justify-center gap-1.5"
-                id="core-skills-section"
-              >
-                <article class="h-7 md:h-[3vw]">
-                  <p
-                    class="font-semibold text-transparent"
-                    style="-webkit-text-stroke: 1px white; color: transparent"
+                <section>
+                  <ul
+                    class="flex flex-col gap-8 md:gap-[3vh] leading-tight lg-text"
                   >
-                    Core Skills
-                  </p>
-                  <p class="font-semibold translate-y-[-100%]" id="cs-bold-txt">
-                    Core Skills
-                  </p>
-                </article>
-
-                <!-- STAR -->
-                <ul>
-                  <!-- 1 -->
-                  <li>
-                    <img
-                      src="assets/star_1.svg"
-                      alt="star"
-                      class="stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-
-                  <!-- 2 -->
-                  <li>
-                    <img
-                      src="assets/star_2.svg"
-                      alt="star"
-                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-
-                  <!-- 3 -->
-                  <li>
-                    <img
-                      src="assets/star_3.svg"
-                      alt="star"
-                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-
-                  <!-- 4 -->
-                  <li>
-                    <img
-                      src="assets/star_4.svg"
-                      alt="star"
-                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-
-                  <!-- 5 -->
-                  <li>
-                    <img
-                      src="assets/star_5.svg"
-                      alt="star"
-                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-
-                  <!-- 6 -->
-                  <li>
-                    <img
-                      src="assets/star_6.svg"
-                      alt="star"
-                      class="hidden stars w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-                </ul>
-              </section>
-
-              <section
-                id="marquee-wrapper"
-                class="bg-[#24bef13d] backdrop-blur-2xl w-full overflow-hidden rounded-[0.5vw] font-bold relative"
-              >
-                <!-- Left fade -->
-                <div
-                  class="pointer-events-none absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-[#151515] to-transparent z-10"
-                ></div>
-
-                <!-- MARQUEE CONTENT -->
-                <div
-                  class="flex flex-row items-center gap-[5vw] w-max py-[3vh]"
-                  data-scroll
-                  data-scroll-direction="horizontal"
-                  data-scroll-speed="8"
-                >
-                  <ol
-                    class="flex flex-row gap-15 md:gap-[5vw] w-max h-full animate-marquee"
-                  >
-                    <!-- HTML -->
-                    <li class="marquee-content" data-bg-color="#BF4322">
-                      <div class="flex flex-row gap-[1vw] items-center">
-                        <div class="relative card-tilt-anime">
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                            src="assets/HTML-logo.webp"
-                            alt="HTML-logo"
-                          />
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                            src="assets/HTML-logo.webp"
-                            alt="HTML-logo"
-                          />
-                        </div>
-                        <span>HTML</span>
-                        <sup
-                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                          >1</sup
-                        >
-                      </div>
-                    </li>
-
-                    <!-- Tailwind CSS -->
-                    <li class="marquee-content" data-bg-color="#15C2B8">
-                      <div class="flex flex-row gap-[1vw] items-center">
-                        <div class="relative card-tilt-anime">
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                            src="assets/tailwind-css-image.png"
-                            alt="Tailwind-logo"
-                          />
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                            src="assets/tailwind-css-image.png"
-                            alt="Tailwind-logo"
-                          />
-                        </div>
-                        <span>Tailwind CSS</span>
-                        <sup
-                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                          >2</sup
-                        >
-                      </div>
-                    </li>
-
-                    <!-- JavaScript -->
-                    <li class="marquee-content" data-bg-color="#F0DB4F">
-                      <div class="flex flex-row gap-[1vw] items-center">
-                        <div class="relative card-tilt-anime">
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                            src="assets/JavaScript-logo.png"
-                            alt="JavaScript-logo"
-                          />
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                            src="assets/JavaScript-logo.png"
-                            alt="JavaScript-logo"
-                          />
-                        </div>
-                        <span>JavaScript</span>
-                        <sup
-                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                          >3</sup
-                        >
-                      </div>
-                    </li>
-
-                    <!-- GSAP -->
-                    <li class="marquee-content" data-bg-color="#0BE348">
-                      <div class="flex flex-row gap-[1vw] items-center">
-                        <div class="relative card-tilt-anime">
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                            src="assets/GSAP-logo.avif"
-                            alt="GSAP-logo"
-                          />
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                            src="assets/GSAP-logo.avif"
-                            alt="GSAP-logo"
-                          />
-                        </div>
-                        <span>GSAP</span>
-                        <sup
-                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                          >4</sup
-                        >
-                      </div>
-                    </li>
-                  </ol>
-
-                  <!--  -->
-                  <ol
-                    class="flex flex-row gap-15 md:gap-[5vw] w-max animate-marquee"
-                  >
-                    <li class="marquee-content" data-bg-color="#BF4322">
-                      <div class="flex flex-row gap-[1vw] items-center">
-                        <div class="relative card-tilt-anime">
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                            src="assets/HTML-logo.webp"
-                            alt="HTML-logo"
-                          />
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                            src="assets/HTML-logo.webp"
-                            alt="HTML-logo"
-                          />
-                        </div>
-                        <span>HTML</span>
-                        <sup
-                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                          >1</sup
-                        >
-                      </div>
-                    </li>
-
-                    <!-- Tailwind CSS -->
-                    <li class="marquee-content" data-bg-color="#15C2B8">
-                      <div class="flex flex-row gap-[1vw] items-center">
-                        <div class="relative card-tilt-anime">
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                            src="assets/tailwind-css-image.png"
-                            alt="Tailwind-logo"
-                          />
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                            src="assets/tailwind-css-image.png"
-                            alt="Tailwind-logo"
-                          />
-                        </div>
-                        <span>Tailwind CSS</span>
-                        <sup
-                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                          >2</sup
-                        >
-                      </div>
-                    </li>
-
-                    <!-- JavaScript -->
-                    <li class="marquee-content" data-bg-color="#F0DB4F">
-                      <div class="flex flex-row gap-[1vw] items-center">
-                        <div class="relative card-tilt-anime">
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                            src="assets/JavaScript-logo.png"
-                            alt="JavaScript-logo"
-                          />
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                            src="assets/JavaScript-logo.png"
-                            alt="JavaScript-logo"
-                          />
-                        </div>
-                        <span>JavaScript</span>
-                        <sup
-                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                          >3</sup
-                        >
-                      </div>
-                    </li>
-
-                    <!-- GSAP -->
-                    <li class="marquee-content" data-bg-color="#0BE348">
-                      <div class="flex flex-row gap-[1vw] items-center">
-                        <div class="relative card-tilt-anime">
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] blur-md absolute -z-1"
-                            src="assets/GSAP-logo.avif"
-                            alt="GSAP-logo"
-                          />
-                          <img
-                            class="lg:w-[4vw] w-12 h-12 lg:h-[4vw] rounded-[4px] lg:rounded-[0.5vw] skills-img-display"
-                            src="assets/GSAP-logo.avif"
-                            alt="GSAP-logo"
-                          />
-                        </div>
-                        <span>GSAP</span>
-                        <sup
-                          class="translate-x-0 md:translate-x-[-100%] font-extralight scale-50"
-                          >4</sup
-                        >
-                      </div>
-                    </li>
-                  </ol>
-                </div>
-
-                <!-- Right fade -->
-                <div
-                  class="pointer-events-none absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-[#151515] to-transparent z-10"
-                ></div>
-              </section>
-            </div>
-          </section>
-
-          <!-- WHO AM I? -->
-          <section
-            id="about-me-section"
-            class="w-full flex flex-col gap-1.5 md:gap-[1vw]"
-          >
-            <article
-              class="font-semibold flex flex-col justify-center gap-1.5 md:gap-[1vw]"
-            >
-              <div class="flex flex-row w-max" id="wmi-container">
-                <span class="h-7 md:h-[3vw] inline-block">
-                  <div
-                    class="font-semibold text-transparent"
-                    style="-webkit-text-stroke: 1px white; color: transparent"
-                  >
-                    Who am i
-                  </div>
-                  <div
-                    class="font-semibold translate-y-[-100%]"
-                    id="about-me-bold-txt"
-                  >
-                    Who am i
-                  </div>
-                </span>
-
-                <ul class="flex justify-center items-center">
-                  <!-- 1 -->
-                  <li>
-                    <img
-                      src="assets/qm_1.svg"
-                      alt="question mark"
-                      class="question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-                  <!-- 2 -->
-                  <li>
-                    <img
-                      src="assets/qm_2.svg"
-                      alt="question mark"
-                      class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-                  <!-- 3 -->
-                  <li>
-                    <img
-                      src="assets/qm_3.svg"
-                      alt="question mark"
-                      class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-                  <!-- 4 -->
-                  <li>
-                    <img
-                      src="assets/qm_4.svg"
-                      alt="question mark"
-                      class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-                  <!-- 5 -->
-                  <li>
-                    <img
-                      src="assets/qm_5.svg"
-                      alt="question mark"
-                      class="hidden question-mark w-8 h-8 md:w-[2.5vw] md:h-[2.5vw]"
-                    />
-                  </li>
-                </ul>
-              </div>
-
-              <div id="seprate-line-abt-sec" class="h-0.5 bg-white w-0"></div>
-            </article>
-
-            <!--  -->
-            <article class="flex flex-row gap-1.5 md:gap-[1vw] items-center">
-              <!-- video - Timelapse - coding -->
-              <section
-                class="opacity-0 blur-2xl scale-120 grow"
-                id="zoom-out-st"
-              >
-                <!-- blured bg vid -->
-                <video
-                  src="assets/timelapse_coding.mp4"
-                  autoplay
-                  muted
-                  loop
-                  playsinline
-                  class="hidden lg:block w-[50vw] h-max rounded-xl blur-xl absolute top-0 -z-1"
-                ></video>
-                <!-- actual vid -->
-                <video
-                  src="assets/timelapse_coding.mp4"
-                  autoplay
-                  muted
-                  loop
-                  playsinline
-                  class="hidden lg:block w-[50vw] h-max rounded-xl"
-                ></video>
-              </section>
-
-              <section>
-                <ul
-                  class="flex flex-col gap-8 md:gap-[3vh] leading-tight lg-text"
-                >
-                  <!-- INTRO -->
-                  <li>
-                    <span>I'm Himansh,</span>
-                    <span
-                      class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
-                      >a self taught frontend web developer
-                      <div
-                        class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
-                      ></div
-                    ></span>
-                    <p>
-                      who found coding to be more than just a skill – it's my
-                      therapy and my future.
-                    </p>
-                  </li>
-
-                  <!-- JOURNEY -->
-                  <li>
-                    <span
-                      class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
-                      >I started my journey in 2024
-                      <div
-                        class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
-                      ></div>
-                    </span>
-
-                    <div>
-                      and have been building
-                      <!--  -->
+                    <!-- INTRO -->
+                    <li>
+                      <span>I'm Himansh,</span>
                       <span
                         class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
-                      >
-                        cool, responsive, and clean web stuff
+                        >a self taught frontend web developer
+                        <div
+                          class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
+                        ></div
+                      ></span>
+                      <p>
+                        who found coding to be more than just a skill – it's my
+                        therapy and my future.
+                      </p>
+                    </li>
+
+                    <!-- JOURNEY -->
+                    <li>
+                      <span
+                        class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
+                        >I started my journey in 2024
                         <div
                           class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
                         ></div>
                       </span>
-                      <!--  -->
-                      ever since.
-                    </div>
-                  </li>
 
-                  <!-- DREAMS -->
-                  <li>
-                    <span>
-                      When I’m not coding, you’ll probably find me smashing
-                      shuttlecocks on the badminton court or
-                    </span>
-                    <span
-                      class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
-                      >dreaming about the BMW M8 Coupe.
-                      <div
-                        class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
-                      ></div>
-                    </span>
-                  </li>
-                </ul>
-              </section>
-            </article>
-          </section>
-        </main>
+                      <div>
+                        and have been building
+                        <!--  -->
+                        <span
+                          class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
+                        >
+                          cool, responsive, and clean web stuff
+                          <div
+                            class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
+                          ></div>
+                        </span>
+                        <!--  -->
+                        ever since.
+                      </div>
+                    </li>
 
-        <!--  -->
-        <footer></footer>
+                    <!-- DREAMS -->
+                    <li>
+                      <span>
+                        When I’m not coding, you’ll probably find me smashing
+                        shuttlecocks on the badminton court or
+                      </span>
+                      <span
+                        class="relative kotta-one-font overflow-hidden inline-block translate-y-[20%]"
+                        >dreaming about the BMW M8 Coupe.
+                        <div
+                          class="w-full h-full -z-1 absolute top-0 left-0 highlight-kof translate-x-[-100%] highlight-animation-st"
+                        ></div>
+                      </span>
+                    </li>
+                  </ul>
+                </section>
+              </article>
+            </section>
+          </main>
+
+          <!--  -->
+          <footer></footer>
+        </section>
       </section>
     </div>
   </body>

@@ -178,6 +178,7 @@ function hoverToSeeScrollbar() {
   const scrollBarContainer = document.querySelector(
     "#custom-scroll-bar-container"
   );
+  const scrollBarWrapper = document.querySelector("#scrollbar-wrapper");
 
   const basicSetting = {
     duration: 0.2,
@@ -185,15 +186,19 @@ function hoverToSeeScrollbar() {
   };
 
   scrollBarContainer.addEventListener("mouseenter", () => {
-    gsap.to(scrollBarContainer, {
+    gsap.to(scrollBarWrapper, {
       opacity: 1,
+      x: 0,
+      filter: "blur(0px)",
       ...basicSetting,
     });
   });
 
   scrollBarContainer.addEventListener("mouseleave", () => {
-    gsap.to(scrollBarContainer, {
+    gsap.to(scrollBarWrapper, {
       opacity: 0,
+      x: "100%",
+      filter: "blur(10px)",
       ...basicSetting,
     });
   });

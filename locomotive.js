@@ -58,9 +58,10 @@ export function initializeLocomotiveJS() {
 
   function scrollToZoom(scroll) {
     let timeoutId,
-      isScrolling = true;
+      isScrolling = true,
+      once = true;
 
-    const webContainer = document.querySelector("body");
+    const container = document.querySelector("#container");
 
     const basicMaterial = {
       transformOrigin: "center center",
@@ -69,7 +70,7 @@ export function initializeLocomotiveJS() {
 
     scroll.on("scroll", () => {
       if (isScrolling) {
-        gsap.to(webContainer, {
+        gsap.to(container, {
           scale: 1.04,
           ...basicMaterial,
         });
@@ -78,9 +79,13 @@ export function initializeLocomotiveJS() {
       }
 
       timeoutId = setTimeout(() => {
-        gsap.to(webContainer, {
+        gsap.to(container, {
           scale: 1,
           ...basicMaterial,
+          onComplete: () => {
+            if (once) scroll.update();
+            once = false;
+          },
         });
       }, 50);
     });

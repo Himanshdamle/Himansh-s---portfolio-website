@@ -7,7 +7,7 @@ import {
 } from "./animations/coreAnimations.js";
 import { initializeLocomotiveJS } from "./locomotive.js";
 
-initializeLocomotiveJS();
+document.addEventListener("DOMContentLoaded", initializeLocomotiveJS());
 
 popImage(
   {
@@ -67,7 +67,7 @@ rapidChangeEffect(
 
 rapidChangeEffect(
   document.querySelector("#bottom-scroll-box"),
-  document.querySelectorAll(".arrows-down")
+  document.querySelectorAll(".down-arrows")
 );
 
 strechLettersOnHover("himansh-letter-container");
