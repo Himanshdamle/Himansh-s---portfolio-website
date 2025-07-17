@@ -112,5 +112,5 @@ export function initializeLocomotiveJS() {
       }
     });
   }
-  detectUpDownScroll(scroll);
+  // detectUpDownScroll(scroll);
 }

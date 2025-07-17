@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Himansh Web ⚡</title>
 
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon" />
+
     <!-- https://fonts.google.com/ ---- GOOGLE FONTS CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -69,7 +71,7 @@
         id="web-container"
       >
         <nav
-          class="fixed py-[2vh] px-[2vw] z-1 xl-text w-full"
+          class="fixed py-[3vh] px-[2vw] z-1 xl-text w-full"
           id="nav-bar"
           data-scroll
           data-scroll-sticky
@@ -106,7 +108,7 @@
               <div>
                 <!-- Full Screen -->
                 <button
-                  class="flex flex-row gap-[1vw] items-center"
+                  class="hidden lg:flex flex-row gap-[1vw] items-center"
                   id="full-screen-btn"
                 >
                   <div class="flex-[1] w-full h-full">
@@ -127,7 +129,7 @@
         <!-- CUSTOM SCROLL BAR -->
         <aside
           id="custom-scroll-bar-container"
-          class="fixed w-max right-0 h-screen z-10 xl-text"
+          class="hidden lg:block fixed w-max right-0 h-screen z-10 xl-text"
           role="navigation"
           data-scroll
           data-scroll-sticky
@@ -201,7 +203,7 @@
               ></a>
               <!-- Project  -->
               <a
-                href="#"
+                href="#projects-section"
                 role="button"
                 data-scroll-to
                 id="project-btn"
@@ -269,7 +271,7 @@
           style="background-image: url('assets/noice.svg')"
         >
           <!--  -->
-          <main class="px-[2vw]">
+          <main class="px-[2vw] flex flex-col gap-[2.5vh]">
             <!-- HERO SECTION -->
             <section
               id="landing-page-section"
@@ -363,10 +365,7 @@
                     </section>
 
                     <!--  -->
-                    <section
-                      id="img-right-side-box"
-                      class="name-sections translate-x-[-3%]"
-                    >
+                    <section id="img-right-side-box" class="name-sections">
                       <!-- Layer 1 -->
                       <article
                         class="overflow-hidden h-[72px] lg:h-[6vw] translate-y-[5%] translate-x-[-1%] move-txt-grp2"
@@ -809,15 +808,15 @@
                 class="font-semibold flex flex-col justify-center gap-1.5 md:gap-[1vw]"
               >
                 <div class="flex flex-row w-max" id="wmi-container">
-                  <span class="h-7 md:h-[3vw] inline-block">
+                  <span class="md:h-[3vw] inline-block">
                     <div
-                      class="font-semibold text-transparent"
+                      class="hidden md:block font-semibold text-transparent"
                       style="-webkit-text-stroke: 1px white; color: transparent"
                     >
                       Who am i
                     </div>
                     <div
-                      class="font-semibold translate-y-[-100%]"
+                      class="font-semibold md:translate-y-[-100%]"
                       id="about-me-bold-txt"
                     >
                       Who am i
@@ -961,6 +960,69 @@
                   </ul>
                 </section>
               </article>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects-section">
+              <article
+                class="font-semibold flex flex-col justify-center gap-1.5 md:gap-[1vw]"
+              >
+                <div class="flex flex-row w-max" id="wmi-container">
+                  <span class="md:h-[3vw] inline-block">
+                    <div
+                      class="hidden md:block font-semibold text-transparent"
+                      style="-webkit-text-stroke: 1px white; color: transparent"
+                    >
+                      Projects
+                    </div>
+                    <div
+                      class="font-semibold md:translate-y-[-100%]"
+                      id="projects-bold-txt"
+                    >
+                      Projects
+                    </div>
+                  </span>
+                </div>
+
+                <div id="seprate-line-abt-sec" class="h-0.5 bg-white w-0"></div>
+              </article>
+
+              <section class="px-[10vw] h-full w-full">
+                <ul class="text-7xl lg:text-[5vw]">
+                  <li class="h-screen">
+                    <div
+                      class="h-full flex flex-col justify-center items-center"
+                    >
+                      <section class="flex flex-col">
+                        <!-- Numbering -->
+                        <div class="w-full flex flex-col justify-start">
+                          <span class="kotta-one-font leading-[6vh]">1.</span>
+                        </div>
+
+                        <!-- Project Name -->
+                        <div>
+                          <h2 class="font-semibold">Your To-Dos App</h2>
+                        </div>
+
+                        <!-- link, Github repo, etc -->
+                        <div class="flex flex-row justify-end">
+                          <a
+                            href="https://github.com/Himanshdamle/Your-To-Dos-app"
+                            target="_blank"
+                            class="mt-[1vh]"
+                          >
+                            <img
+                              src="assets/Octicons-mark-github 1.svg"
+                              alt="Github Repository image"
+                              class="w-[5vw] h-[5vw] opacity-50 hover:opacity-100 hover:scale-105 transition-transform transition-opacity duration-300"
+                            />
+                          </a>
+                        </div>
+                      </section>
+                    </div>
+                  </li>
+                </ul>
+              </section>
             </section>
           </main>
 

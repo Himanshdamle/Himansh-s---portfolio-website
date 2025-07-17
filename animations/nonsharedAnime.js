@@ -205,6 +205,7 @@ function hoverToSeeScrollbar() {
 }
 hoverToSeeScrollbar();
 
+// logic
 function showISTTime() {
   const timeElem = document.querySelector("#show-time");
 
@@ -304,7 +305,7 @@ function cursor() {
     let xAxis;
     if (e.x + cursorRect.width > window.innerHeight)
       xAxis = e.x - cursorRect.width;
-    else xAxis = e.x;
+    else xAxis = e.x + 10;
 
     gsap.to(cursor, {
       x: xAxis,
